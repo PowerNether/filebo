@@ -23,5 +23,5 @@
     font-family: "SF Pro";
     font-style: normal;
     font-display: swap;
-    src: local("SFPro"), local("SF Pro"), url("../fonts/SF-Pro.ttf") format("truetype");
+    src: local("SFPro"), local("SF Pro"), url("../font/SF-Pro.ttf") format("truetype");
 }
