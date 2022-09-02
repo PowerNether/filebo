@@ -1,0 +1,27 @@
+/* @font-face {
+    font-family: "SFPro";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: local("SFPro"), local("SFPro-Regular"), url("../fonts/SFPro-Regular.woff2") format("woff2"), url("../fonts/SFPro-Regular.woff") format("woff"), url("../fonts/SFPro-Regular.ttf") format("truetype"), url("../fonts/SFPro-Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: "SFPro";
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    src: local("SFPro"), local("SFPro-Regular"), url("../fonts/SFPro-Medium.woff2") format("woff2"), url("../fonts/SFPro-Medium.woff") format("woff"), url("../fonts/SFPro-Medium.ttf") format("truetype"), url("../fonts/SFPro-Medium.otf") format("opentype");
+}
+@font-face {
+    font-family: "SFPro";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: local("SFPro"), local("SFPro-Regular"), url("../fonts/SFPro-Bold.woff2") format("woff2"), url("../fonts/SFPro-Bold.woff") format("woff"), url("../fonts/SFPro-Bold.ttf") format("truetype"), url("../fonts/SFPro-Bold.otf") format("opentype");
+} */
+@font-face {
+    font-family: "SF Pro";
+    font-style: normal;
+    font-display: swap;
+    src: local("SFPro"), local("SF Pro"), url("../fonts/SF-Pro.ttf") format("truetype");
+}
