@@ -165,6 +165,11 @@ body {
     
     margin-bottom: 12px;
 }
+.hello__link {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
 .hello__mas {
     width: 195px;
     height: auto;
@@ -218,11 +223,16 @@ body {
     position: relative;
 
     width: 100%;
+
+    cursor: pointer;
 }
 .film__preview {
     width: 100%;
 
     border-radius: 32px;
+
+    user-select: none;
+    pointer-events: none;
 }
 .film__watch {
     position: absolute;
@@ -235,6 +245,9 @@ body {
     line-height: 80px;
     letter-spacing: 2.35px;
     color: #000000;
+
+    user-select: none;
+    pointer-events: none;
 }
 .film__play {
     position: absolute;
@@ -246,6 +259,9 @@ body {
 
     width: 170px;
     height: 170px;
+
+    user-select: none;
+    pointer-events: none;
 }
 
 /* Пример */
@@ -538,6 +554,8 @@ body {
 
     width: 100%;
     max-width: 720px;
+
+    cursor: pointer;
 }
 .videos__preview {
     display: block;
@@ -548,6 +566,9 @@ body {
     object-fit: cover;
 
     border-radius: 32px;
+
+    user-select: none;
+    pointer-events: none;
 }
 .videos__play {
     position: absolute;
@@ -561,6 +582,9 @@ body {
     height: 150px;
     
     border-radius: 50%;
+
+    user-select: none;
+    pointer-events: none;
 }
 
 /* Отзывы */
