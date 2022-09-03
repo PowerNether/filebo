@@ -1,5 +1,9 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
-    font-family: "SF Pro";
+    /* font-family: "SF Pro"; */
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     background: #000000;
     background: linear-gradient(#06131D 0%, #000000 15%);
 }
@@ -12,7 +16,7 @@ body {
     margin: 0 auto;
 }
 .title {
-    font-weight: 600;
+    font-weight: bold;
     font-size: 58px;
     line-height: 62px;
     letter-spacing: .6px;
@@ -84,7 +88,7 @@ body {
 }
 .header__logo__title {
     font-size: 22px;
-    font-weight: 600;
+    font-weight: bold;
     line-height: 1.25;
     letter-spacing: 0.20px;
     color: #f8f8f2;
@@ -96,7 +100,7 @@ body {
     margin-left: auto;
 }
 .hedear__link {
-    font-weight: 600;
+    font-weight: bold;
     font-size: 14px;
     line-height: 26px;
     letter-spacing: 0.15;
@@ -152,7 +156,7 @@ body {
     margin-top: -45px;
 }
 .hello__title {
-    font-weight: 600;
+    font-weight: bold;
     font-size: 46px;
     line-height: 58px;
     text-align: center;
@@ -193,7 +197,7 @@ body {
     max-width: 265px;
 }
 .film__title {
-    font-weight: 600;
+    font-weight: bold;
     font-size: 28px;
     letter-spacing: .3px;
     line-height: 40px;
@@ -226,7 +230,7 @@ body {
     left: 60px;
     transform: translateY(-50%);
 
-    font-weight: 600;
+    font-weight: bold;
     font-size: 72px;
     line-height: 80px;
     letter-spacing: 2.35px;
@@ -278,7 +282,7 @@ body {
     margin-bottom: 6px;
 }
 .overview__text {
-    font-weight: 600;
+    font-weight: bold;
     font-size: 18px;
     line-height: 20px;
     letter-spacing: .2px;
@@ -450,6 +454,7 @@ body {
     color: #FFCA80;
 }
 .preview__text {
+    font-weight: 600;
     font-size: 18px;
     line-height: 26px;
     letter-spacing: .2px;
@@ -459,6 +464,7 @@ body {
     margin-top: 24px;
 }
 .preview__repeat {
+    font-weight: 600;
     font-size: 16px;
     line-height: 30px;
     letter-spacing: .2px;
@@ -515,7 +521,7 @@ body {
     padding-top: 8px;
 }
 .videos__title {
-    font-weight: 600;
+    font-weight: bold;
     font-size: 28px;
     line-height: 40px;
     letter-spacing: .3px;
@@ -622,7 +628,7 @@ body {
     margin-bottom: 32px;
 }
 .comments__author {
-    font-weight: 600;
+    font-weight: bold;
     font-size: 26px;
     line-height: 38px;
     letter-spacing: .3px;
@@ -685,7 +691,7 @@ body {
     margin-top: 48px;
 }
 .faq__title {
-    font-weight: 600;
+    font-weight: bold;
     font-size: 30px;
     line-height: 40px;
     letter-spacing: .3px;
@@ -714,7 +720,7 @@ body {
     margin: 0 0 32px;
 }
 .fetures__title {
-    font-weight: 600;
+    font-weight: bold;
     font-size: 36px;
     line-height: 40px;
     letter-spacing: 0.4px;
@@ -723,6 +729,7 @@ body {
     margin-bottom: 20px;
 }
 .fetures__text {
+    font-weight: normal;
     font-size: 16px;
     line-height: 26px;
     letter-spacing: 0.2px;
@@ -774,7 +781,6 @@ body {
 .devolopers .z-i-3 {
     z-index: 3;
 }
-
 .devolopers__list {
     display: flex;
     justify-content: center;
@@ -803,7 +809,7 @@ body {
     bottom: 16px;
     transform: translateX(-50%);
 
-    font-weight: 600;
+    font-weight: bold;
     font-size: 24px;
     line-height: 30px;
     letter-spacing: .3px;
@@ -834,6 +840,7 @@ body {
     margin-left: 24px;
 }
 .wallpapers__download {
+    font-weight: normal;
     font-size: 26px;
     line-height: 32px;
     letter-spacing: .3px;
@@ -848,7 +855,7 @@ body {
     margin-bottom: 128px;
 }
 .newsletter__title {
-    font-weight: 500;
+    font-weight: bold;
     font-size: 28px;
     line-height: 40px;
     letter-spacing: .3px;
@@ -860,7 +867,7 @@ body {
     margin-bottom: 16px;
 }
 .newsletter__text {
-    font-weight: 400;
+    font-weight: normal;
     font-size: 28px;
     line-height: 32px;
     letter-spacing: .3px;
@@ -879,7 +886,7 @@ body {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 .newsletter__input {
-    font-weight: 300;
+    font-weight: normal;
     font-size: 28px;
     line-height: 80px;
     color: #A9A9A9;
@@ -895,7 +902,7 @@ body {
     outline: none;
 }
 .newsletter__btn {
-    font-weight: 500;
+    font-weight: bold;
     font-size: 28px;
     line-height: 80px;
     color: #F8F8F2;
@@ -932,6 +939,7 @@ body {
     height: auto;
 }
 .footer__title {
+    font-weight: bold;
     font-size: 28px;
     line-height: 40px;
     letter-spacing: .3px;

@@ -1,27 +1,30 @@
-/* @font-face {
-    font-family: "SFPro";
-    font-weight: 400;
+@font-face {
+    font-family: 'SF Pro Display';
     font-style: normal;
-    font-display: swap;
-    src: local("SFPro"), local("SFPro-Regular"), url("../fonts/SFPro-Regular.woff2") format("woff2"), url("../fonts/SFPro-Regular.woff") format("woff"), url("../fonts/SFPro-Regular.ttf") format("truetype"), url("../fonts/SFPro-Regular.otf") format("opentype");
+    font-weight: 300;
+    src: local('☺︎'), url("http://www.apple.com/wss/fonts/SF-Pro-Display/v1/sf-pro-display_light.woff") format("woff"), url("http://www.apple.com/wss/fonts/SF-Pro-Display/v1/sf-pro-display_light.ttf") format("truetype");
 }
 @font-face {
-    font-family: "SFPro";
+    font-family: 'SF Pro Display';
+    font-style:normal;
+    font-weight:400;
+    src: local('☺︎'), url("http://www.apple.com/wss/fonts/SF-Pro-Display/v1/sf-pro-display_regular.woff") format("woff"), url("http://www.apple.com/wss/fonts/SF-Pro-Display/v1/sf-pro-display_regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'SF Pro Display';
+    font-style: normal;
     font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-    src: local("SFPro"), local("SFPro-Regular"), url("../fonts/SFPro-Medium.woff2") format("woff2"), url("../fonts/SFPro-Medium.woff") format("woff"), url("../fonts/SFPro-Medium.ttf") format("truetype"), url("../fonts/SFPro-Medium.otf") format("opentype");
+    src: local('☺︎'), url("http://www.apple.com/wss/fonts/SF-Pro-Display/v1/sf-pro-display_medium.woff") format("woff"), url("http://www.apple.com/wss/fonts/SF-Pro-Display/v1/sf-pro-display_medium.ttf") format("truetype");
 }
 @font-face {
-    font-family: "SFPro";
+    font-family: 'SF Pro Display';
+    font-style: normal;
     font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-    src: local("SFPro"), local("SFPro-Regular"), url("../fonts/SFPro-Bold.woff2") format("woff2"), url("../fonts/SFPro-Bold.woff") format("woff"), url("../fonts/SFPro-Bold.ttf") format("truetype"), url("../fonts/SFPro-Bold.otf") format("opentype");
-} */
+    src: local('☺︎'), url("http://www.apple.com/wss/fonts/SF-Pro-Display/v1/sf-pro-display_semibold.woff") format("woff"), url("http://www.apple.com/wss/fonts/SF-Pro-Display/v1/sf-pro-display_semibold.ttf") format("truetype");
+}
 @font-face {
-    font-family: "SF Pro";
+    font-family: 'SF Pro Display';
     font-style: normal;
-    font-display: swap;
-    src: local("SFPro"), local("SF Pro"), url("../font/SF-Pro.ttf") format("truetype");
+    font-weight: 700;
+    src: local('☺︎'), url("http://www.apple.com/wss/fonts/SF-Pro-Display/v1/sf-pro-display_bold.woff") format("woff"), url("http://www.apple.com/wss/fonts/SF-Pro-Display/v1/sf-pro-display_bold.ttf") format("truetype");
 }
