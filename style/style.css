@@ -959,8 +959,11 @@ body {
     display: flex;
     flex-direction: column;
 
-    width: calc(100% / 5);
+    width: calc(100% / 4);
     height: auto;
+}
+.footer__column:last-of-type {
+    width: calc(100% / 5);
 }
 .footer__title {
     font-weight: bold;
