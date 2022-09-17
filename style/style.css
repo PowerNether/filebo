@@ -238,11 +238,35 @@ body {
     margin: 0 auto 12px;
 }
 .hello__trial {
+    position: relative;
+
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
     text-align: center;
     letter-spacing: .3px;
+
+    width: fit-content;
+
+    padding-left: 24px;
+    margin: 0 auto;
+}
+.hello__trial::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 14px;
+    height: 14px;
+
+    -webkit-mask: url('../icons/calendar.svg') center / contain no-repeat;
+            mask: url('../icons/calendar.svg') center / contain no-repeat;
+
+    background: #000000;
 }
 
 /* Фильм */
