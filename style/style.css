@@ -61,7 +61,15 @@ body {
 
 /* Шапка сайта */
 .header {
+    top: 0;
+    left: 0;
+
+    padding: 0;
     margin-bottom: 52px;
+
+    background: transparent;
+
+    transition: background .35s, padding .35s;
 }
 .header__container {
     display: flex;
@@ -109,6 +117,55 @@ body {
 .hedear__link + .hedear__link {
     margin-left: 48px;
 }
+.header__donwload {
+    display: none;
+}
+.header__mas img {
+    width: 100%;
+    height: auto;
+
+    max-height: 36px;
+    
+    aspect-ratio: 194 / 47;
+}
+.header__setapp {
+    margin: 0 0 0 16px;
+}
+.header__setapp img {
+    width: 100%;
+    height: auto;
+
+    max-height: 36px;
+    
+    aspect-ratio: 158 / 47;
+}
+.header.sticky {
+    position: sticky;
+    z-index: 1;
+    
+    padding: 16px 0;
+
+    background: #000000;
+}
+.header.sticky .header__container {
+    margin: 0 auto;
+}
+.header.sticky .header__logo {
+    flex-basis: 180px;
+    flex-grow: 1;
+}
+.header.sticky .header__menu {
+    flex-grow: 3;
+
+    justify-content: center;
+}
+.header.sticky .header__donwload {
+    flex-basis: 180px;
+    flex-grow: 1;
+
+    display: flex;
+}
+
 
 .hello {
     display: flex;
@@ -359,18 +416,53 @@ body {
 
     max-width: 464px;
 }
+.use__text .icon {
+    display: inline-block;
+
+    width: 26px;
+    height: 26px;
+
+    margin: 0 0 -3px;
+
+    -webkit-mask: url('../icons/command.svg') center / contain no-repeat;
+            mask: url('../icons/command.svg') center / contain no-repeat;
+
+    background: #F8F8F2;
+}
 .use__text + .use__text {
     margin-top: 32px;
 }
 .use__repeat {
+    position: relative;
+
     font-size: 16px;
     line-height: 30px;
     letter-spacing: .2px;
     color: #F8F8F2;
 
+    width: fit-content;
+
+    padding-right: 24px;
     margin-top: 24px;
 
     cursor: pointer;
+}
+.use__repeat::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    -webkit-mask: url('../icons/arrow.counterclockwise.svg') center / contain no-repeat;
+            mask: url('../icons/arrow.counterclockwise.svg') center / contain no-repeat;
+
+    background: #F8F8F2;
 }
 .use__image {
     display: block;
@@ -479,15 +571,36 @@ body {
     margin-top: 24px;
 }
 .preview__repeat {
-    font-weight: 600;
+    position: relative;
+
     font-size: 16px;
     line-height: 30px;
     letter-spacing: .2px;
     color: #F8F8F2;
 
+    width: fit-content;
+
+    padding-right: 24px;
     margin-top: 24px;
 
     cursor: pointer;
+}
+.preview__repeat::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    -webkit-mask: url('../icons/arrow.counterclockwise.svg') center / contain no-repeat;
+            mask: url('../icons/arrow.counterclockwise.svg') center / contain no-repeat;
+
+    background: #F8F8F2;
 }
 .preview__image {
     display: block;
@@ -680,6 +793,8 @@ body {
     transition: max-height .35s;
 }
 .comments__toggler {
+    position: relative;
+
     font-size: 26px;
     line-height: 38px;
     letter-spacing: .3px;
@@ -687,9 +802,30 @@ body {
     color: #2892F4;
 
     display: block;
-    width: 100%;
+
+    width: fit-content;
+
+    padding-right: 24px;
+    margin: 0 auto;
 
     cursor: pointer;
+}
+.comments__toggler::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 22px;
+    height: 22px;
+
+    -webkit-mask: url('../icons/chevron.right.svg') center / contain no-repeat;
+            mask: url('../icons/chevron.right.svg') center / contain no-repeat;
+
+    background: #2892F4;
 }
 
 /* Вопрос - ответ */
@@ -863,6 +999,8 @@ body {
     margin-left: 24px;
 }
 .wallpapers__download {
+    position: relative;
+
     font-weight: normal;
     font-size: 26px;
     line-height: 32px;
@@ -871,6 +1009,28 @@ body {
 
     display: flex;
     justify-content: center;
+
+    width: fit-content;
+
+    padding-right: 32px;
+    margin: 0 auto;
+}
+.wallpapers__download::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    -webkit-mask: url('../icons/arrow.down.svg') center / contain no-repeat;
+            mask: url('../icons/arrow.down.svg') center / contain no-repeat;
+
+    background: #2892F4;
 }
 
 /* Подписка на новости */
@@ -1041,6 +1201,20 @@ body {
     top: 32px;
     left: 32px;
 
-    font-size: 40px;
-    color: #FFFFFF;
+    display: block;
+
+    width: 32px;
+    height: 32px;
+
+    -webkit-mask: url('../icons/multiply.svg') center / contain no-repeat;
+            mask: url('../icons/multiply.svg') center / contain no-repeat;
+
+    background: #AAA;
+
+    cursor: pointer;
+
+    transition: background .35s;
+}
+.modal__close:hover {
+    background: #FFFFFF;
 }

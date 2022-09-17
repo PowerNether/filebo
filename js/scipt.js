@@ -1,3 +1,16 @@
+function stickyHeader () {
+    const header = document.querySelector('.header') || null;
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 868) {
+            header.classList.add('sticky');
+        } else {
+            header.classList.remove('sticky');
+        }
+    }, { passive: true })
+}
+stickyHeader();
+
 MicroModal.init();
 
 function toggleReviews () {
