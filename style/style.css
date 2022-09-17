@@ -141,7 +141,7 @@ body {
 }
 .header.sticky {
     position: sticky;
-    z-index: 1;
+    z-index: 10;
     
     padding: 16px 0;
 
@@ -531,15 +531,37 @@ body {
     margin: 0 auto 16px;
 }
 .interface__repeat {
+    position: relative;
+
     font-size: 16px;
     line-height: 30px;
     letter-spacing: .2px;
     color: #F8F8F2;
     text-align: center;
 
-    margin-bottom: 40px;
+    width: fit-content;
+
+    padding-right: 24px;
+    margin: 0 auto 40px;
 
     cursor: pointer;
+}
+.interface__repeat::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    -webkit-mask: url('../icons/arrow.counterclockwise.svg') center / contain no-repeat;
+            mask: url('../icons/arrow.counterclockwise.svg') center / contain no-repeat;
+
+    background: #F8F8F2;
 }
 .interface__desc {
     font-size: 18px;
