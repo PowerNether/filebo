@@ -18,23 +18,30 @@
 <body>
     <header class="header">
         <div class="header__container">
-            <div class="header__logo">
-                <img class="header__logo__icon" src="./images/fFileBo.png" alt="FileBo" />
-                <span class="header__logo__title">FileBo</span>
+            <div class="header__head">
+                <div class="header__logo">
+                    <img class="header__logo__icon" src="./images/fFileBo.png" alt="FileBo" />
+                    <span class="header__logo__title">FileBo</span>
+                </div>
+                <div class="header__toggler">
+                    <span class="header__toggler__line"></span>
+                </div>
             </div>
-            <nav class="header__menu">
-                <a href="#futures" class="hedear__link">Futures</a>
-                <a href="#howto" class="hedear__link">How-to</a>
-                <a href="#reviews" class="hedear__link">Reviews</a>
-                <a href="#contact" class="hedear__link">Contact</a>
-            </nav>
-            <div class="header__donwload">
-                <a href="https://apps.apple.com/ua/app/keykey-typing-practice/id1035137927?mt=12" target="_blank" class="header__mas">
-                    <img src="./images/mas.png" alt="Mac App Store">
-                </a>
-                <a href="http://setapp.sjv.io/c/123000/425212/5114" target="_blank" class="header__setapp">
-                    <img src="./images/setapp.png" alt="SETAPP">
-                </a>
+            <div class="header__mobile">
+                <nav class="header__menu">
+                    <a href="#futures" class="hedear__link">Futures</a>
+                    <a href="#howto" class="hedear__link">How-to</a>
+                    <a href="#reviews" class="hedear__link">Reviews</a>
+                    <a href="#contact" class="hedear__link">Contact</a>
+                </nav>
+                <div class="header__donwload">
+                    <a href="https://apps.apple.com/ua/app/keykey-typing-practice/id1035137927?mt=12" target="_blank" class="header__mas">
+                        <img src="./images/mas.png" alt="Mac App Store">
+                    </a>
+                    <a href="http://setapp.sjv.io/c/123000/425212/5114" target="_blank" class="header__setapp">
+                        <img src="./images/setapp.png" alt="SETAPP">
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -94,7 +101,7 @@
     <section class="container block use" id="howto">
         <div class="use__content">
             <p class="use__type">Easy to use</p>
-            <h2 class="title">Open with a hotkey, <br> menubar or Dock icon </h2>
+            <h2 class="title">Open with a <span>hotkey</span>, <br> <span>menubar</span> or <span>Dock icon</span></h2>
             <div class="use__command">
                 <img src="./images/useKeys.png" alt="keys" class="use__icon">
                 <p class="use__text">Press CMD (<span class="icon"></span> ) twice to <br> see your Recent Files</p>
@@ -108,7 +115,7 @@
 
     <section class="container interface">
         <p class="interface__title">Keep the good stuff </p>
-        <h2 class="title">See all favorite files in one click</h2>
+        <h2 class="title">See <span>all favorite</span> files in one click</h2>
         <p class="text">How often do you download something form the internet, make screenshot, export picture or document and then struggle to find it among other files? FileBo crafted to save your time and give you a fast access to those files. </p>
         <img src="./images/interface1.png" alt="interface" class="interface__img">
         <p class="interface__desc">FileBo explains idea and futures of the app. And how proper managment of Recent Files</p>
@@ -138,7 +145,7 @@
     </section>
 
     <section class="container interface interface__two">
-        <h2 class="title">Choose the view <br> that works for you</h2>
+        <h2 class="title">Choose the view <br> <span>that works</span> for you</h2>
         <p class="text">How often do you download something form the internet, make screenshot, export picture or document and then struggle to find it among other files? FileBo crafted to save your time and give you a fast access to those files. </p>
         <p class="interface__repeat">Replay</p>
         <img src="./images/interface2.png" alt="interface" class="interface__img">
@@ -165,7 +172,7 @@
     </section>
 
     <section class="container videos">
-        <h2 class="title">Find out how FileBo <br> will save your time</h2>
+        <h2 class="title">Find out how FileBo <br> will <span>save your time</span></h2>
         <div class="videos__list">
             <div class="videos__item">
                 <div class="videos__video" data-micromodal-trigger="modal-download">
@@ -201,7 +208,7 @@
     </section>
 
     <section class="container comments" id="reviews">
-        <h2 class="title">Users ❤️ FileBo</h2>
+        <h2 class="title">Users ❤️ <span>FileBo</span></h2>
         <div class="comments__item comments__item__small">
             <div class="comments__content">
                 <p class="comments__text">I wish I had an app like KeyKey Typing Tutor when I learned to type twenty years ago. Now I’m using it to try to rewire my brain into understanding some other keyboard layouts.</p>
@@ -329,7 +336,9 @@
             <p class="fetures__text">NeoFile X features full support for Apple's silicon chips enabling faster file indexing and searching.</p>
         </div>
         <div class="block fetures__item">
-            <span class="fetures__icon"></span>
+            <div class="fetures__icons">
+                <img src="./images/multilanguage.png" alt="FingerPrint" class="fetures__icon">
+            </div>
             <p class="fetures__title">Multilanguage <br> support</p>
             <p class="fetures__text">FileBo features full support for Apple's silicon chips enabling faster file indexing and searching.</p>
         </div>
@@ -384,7 +393,7 @@
     </section>
 
     <section class="container wallpapers">
-        <h2 class="title">Inspired by FileBo</h2>
+        <h2 class="title">Inspired by <span>FileBo</span></h2>
         <p class="text">Snick pick inside FileBo icon. How often do you download something form the internet, make screenshot, export picture or document and then struggle to find it among other files? FilePal crafted to save your time and give you a fast access to those files.</p>
         <div class="wallpapers__list">
             <img src="./images/wallpaper-1.png" alt="wallpaper1" class="wallpapers__item">
