@@ -1732,6 +1732,9 @@ body {
         padding: 0 20px;
         margin-bottom: 60px;
     }
+    .videos .title {
+        margin-bottom: 32px;
+    }
     .videos__list {
         display: contents;
     }
