@@ -397,7 +397,10 @@ body {
 
 /* Использование */
 .use {
+    overflow: hidden;
+
     display: flex;
+    justify-content: space-between;
 
     padding: 36px 60px;
     margin-bottom: 60px;
@@ -411,17 +414,18 @@ body {
 }
 .use__command {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     margin-bottom: 40px;
 }
 .use__icon {
     display: block;
 
     width: 100%;
-    max-width: 145px;
+    max-width: 248px;
     height: auto;
 
-    margin-right: 16px;
+    margin-left: -8px;
+    margin-bottom: 8px;
 }
 .use__command .use__text {
     font-size: 28px;
@@ -506,10 +510,10 @@ body {
     display: block;
     
     width: 100%;
-    max-width: 725px;
+    max-width: 860px;
     height: auto;
 
-    margin-right: -60px;
+    margin-right: -200px;
 }
 
 /* Примеры интерфесов */
@@ -591,6 +595,7 @@ body {
 /* Примеры интерфесов */
 .preview {
     position: relative;
+    overflow: hidden;
 
     display: flex;
     align-items: flex-end;
@@ -665,13 +670,26 @@ body {
     background: #F8F8F2;
 }
 .preview__image {
-    display: block;
+    position: absolute;
+    right: -75px;
+    bottom: 50%;
+    transform: translateY(50%);
 
-    width: 100%;
-    max-width: 525px;
+    width: 625px;
     height: auto;
 
-    margin-right: -60px;
+    object-fit: fill;
+}
+.nabigation .preview__image {
+    position: absolute;
+    right: -650px;
+    bottom: 35px;
+    transform: unset;
+
+    display: block;
+
+    width: 1200px;
+    height: auto;
 
     object-fit: fill;
 }
@@ -679,6 +697,7 @@ body {
     position: absolute;
     left: 47%;
     bottom: 80px;
+    z-index: 1;
     transform: translateX(-50%);
 
     display: block;
@@ -1312,6 +1331,9 @@ body {
 
         background: #000000;
     }
+    .header.sticky {
+        padding: 0;
+    }
 
     .header__container {
         align-items: center;
@@ -1603,6 +1625,9 @@ body {
         font-size: 14px;
         line-height: 18px;
     }
+    .use__icon {
+        margin: 0 auto 16px;
+    }
     .use__text .icon {
         width: 14px;
         height: 14px;
@@ -1641,6 +1666,9 @@ body {
         font-size: 14px;
         line-height: 18px;
         text-align: center;
+    }
+    .interface__repeat {
+        display: none;
     }
 
     .preview {
@@ -1683,8 +1711,19 @@ body {
     .preview__line {
         display: none;
     }
+    .nabigation .preview__image,
     .preview__image {
-        margin: 16px auto 0;
+        position: relative;
+        right: unset;
+        bottom: unset;
+        transform: unset;
+
+        width: auto;
+
+        margin: 16px -20px -32px;
+    }
+    .nabigation .preview__image {
+        margin: 16px 0 0;
     }
 
     .videos {
