@@ -116,7 +116,7 @@ body {
     font-weight: bold;
     font-size: 14px;
     line-height: 26px;
-    letter-spacing: 0.15;
+    letter-spacing: 0.15px;
     text-transform: uppercase;
     color: #f8f8f2;
 }
@@ -1310,6 +1310,161 @@ body {
     background: #FFFFFF;
 }
 
+@media screen and (min-width: 769px) and (max-width: 1268px) {
+    body {
+        padding: 0 20px;
+    }
+    .container {
+        max-width: unset;
+    }
+
+    .header {
+        padding: 0 20px;
+    }
+    .header.sticky .header__donwload {
+        align-items: center;
+    }
+
+    .film__content {
+        flex-shrink: 0;
+    }
+    .film__video {
+        flex-shrink: 1;
+    }
+
+    .overview__image {
+        width: 100%;
+    }
+
+    .use {
+        padding: 32px 60px;
+    }
+    .use__image {
+        margin-right: -320px;
+    }
+
+    .interface__img {
+        width: 100%;
+    }
+    .interface__desc {
+        text-align: center;
+    }
+
+    .preview {
+        padding: 30px 60px 60px;
+    }
+    .preview__line {
+        display: none;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1168px) {
+    .use {
+        align-items: center;
+    }
+    .use__image {
+        max-width: 645px;
+    }
+
+    .preview__image {
+        width: 568px;
+    }
+    .nabigation .preview__image {
+        width: 900px;
+
+        right: -488px;
+        bottom: 50%;
+        transform: translateY(50%);
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1068px) {
+    .hello .title {
+        margin-left: 0;
+    }
+    .hello .text {
+        margin-left: 0;
+    }
+    .hello__overview {
+        width: 100%;
+    }
+
+    .film__watch {
+        font-size: 56px;
+        line-height: 60px;
+
+        left: 40px;
+    }
+    .film__play {
+        width: 128px;
+        height: 128px;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 968px) {
+    .title {
+        font-size: 44px;
+        line-height: 48px;
+    }
+
+    .header.sticky .header__logo {
+        flex-basis: unset;
+    }
+    .hedear__link + .hedear__link {
+        margin-left: 32px;
+    }
+
+    .hello .text {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .use {
+        padding: 24px 32px;
+    }
+    .use .title {
+        font-size: 36px;
+        line-height: 40px;
+
+        margin-bottom: 32px;
+    }
+    .use__text {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .use__command .use__text {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .use__type,
+    .preview__type,
+    .interface__title {
+        font-size: 24px;
+        line-height: 28px;
+
+        margin-bottom: 32px;
+    }
+    .interface .text {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .preview__image {
+        width: 468px;
+    }
+
+    .comments__appstore,
+    .comments__author,
+    .comments__text {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .comments__item__small {
+        min-height: unset;
+    }
+
+    .wallpapers__item {
+        width: calc(100% / 4 - 8px * 3 / 4);
+    }
+}
 @media screen and (max-width: 768px) {
     .title {
         font-size: 28px;
