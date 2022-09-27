@@ -1648,6 +1648,8 @@ body {
         line-height: 20px;
         text-align: center;
 
+        max-width: 464px;
+
         margin: 0 auto;
     }
     .hello__overview {
@@ -1738,7 +1740,9 @@ body {
         font-size: 16px;
         line-height: 20px;
 
-        margin-bottom: 20px;
+        max-width: 464px;
+
+        margin: 0 auto 20px;
     }
     .overview__fetures {
         margin-top: 32px;
@@ -1835,7 +1839,9 @@ body {
         line-height: 20px;
         text-align: center;
 
-        margin: 0 0 16px;
+        max-width: 464px;
+
+        margin: 0 auto 16px;
     }
     .interface img {
         display: block;
@@ -1889,6 +1895,8 @@ body {
         line-height: 20px;
         text-align: center;
 
+        max-width: 464px;
+
         margin: 0 auto;
     }
     .preview__text + .preview__text {
@@ -1906,7 +1914,8 @@ body {
         bottom: unset;
         transform: unset;
 
-        width: auto;
+        width: 100%;
+        height: auto;
 
         margin: 16px -20px -32px;
     }
@@ -1916,7 +1925,8 @@ body {
         bottom: unset;
         transform: unset;
 
-        width: auto;
+        width: 100%;
+        height: auto;
 
         margin: 16px -20px -40px;
     }
@@ -1981,6 +1991,8 @@ body {
     .videos__text {
         font-size: 14px;
         line-height: 18px;
+
+        max-width: 464px;
     }
     .videos__item__right .videos__content {
         text-align: left;
