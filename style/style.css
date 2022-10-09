@@ -510,10 +510,18 @@ body {
     display: block;
     
     width: 100%;
-    max-width: 860px;
+    max-width: 660px;
     height: auto;
 
-    margin-right: -200px;
+    margin: 0 -80px 0 0;
+    /* width: 100%; */
+    /* max-width: 860px; */
+    /* height: auto; */
+
+    /* margin-right: -200px; */
+}
+.use__image .HYPE_scene {
+    transform: scale(.5) translate(-50%, -50%);
 }
 
 /* Примеры интерфесов */
