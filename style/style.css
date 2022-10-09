@@ -508,17 +508,8 @@ body {
 }
 .use__image {
     display: block;
-/*     
-    width: 100% !important;
-    max-width: 660px !important;
-    height: auto !important;
 
-    margin: 0 -80px 0 0 !important; */
-    /* width: 100%; */
-    /* max-width: 860px; */
-    /* height: auto; */
-
-    /* margin-right: -200px; */
+    margin: auto -424px auto 0 !important;
 }
 
 /* Примеры интерфесов */
@@ -1357,7 +1348,7 @@ body {
         padding: 32px 60px;
     }
     .use__image {
-        margin-right: -320px;
+        margin: auto -524px auto 0 !important;
     }
 
     .interface__img {
@@ -1375,11 +1366,8 @@ body {
     }
 }
 @media screen and (min-width: 769px) and (max-width: 1168px) {
-    .use {
-        align-items: center;
-    }
     .use__image {
-        max-width: 645px;
+        margin: auto -324px auto 0 !important;
     }
 
     .preview__image {
@@ -1480,6 +1468,11 @@ body {
 
     .wallpapers__item {
         width: calc(100% / 4 - 8px * 3 / 4);
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 824px) {
+    .use__image {
+        margin: auto -64px auto 0 !important;
     }
 }
 @media screen and (max-width: 768px) {
@@ -1798,7 +1791,7 @@ body {
         display: none;
     }
     .use__image {
-        margin-top: 24px;
+        margin: 24px auto 0 !important;
     }
     .use__command {
         order: 1;
