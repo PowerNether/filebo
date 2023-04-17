@@ -721,12 +721,11 @@ body.privacy {
 }
 .google__icon {
     display: block;
-    
-    width: 100%;
-    max-width: 860px;
-    height: auto;
 
-    margin-right: -200px;
+    width: 64px;
+    height: 64px;
+
+    object-fit: contain;
 }
 
 /* B6: Ignore */
