@@ -161,17 +161,20 @@ body.privacy {
     display: block;
 
     width: 100%;
-    height: auto;
-
-    max-height: 36px;
     
+    max-height: 40px;
+
+    object-fit: contain;
     aspect-ratio: 194 / 47;
 
+    -webkit-user-select: none;
     user-select: none;
+
     cursor: pointer;
 }
 .header__toggler {
     display: none;
+    cursor: pointer;
 }
 .header.sticky {
     position: sticky;
@@ -220,6 +223,7 @@ body.privacy {
     color: #FFCA80;
 }
 .hello .text {
+    font-weight: 500;
     font-size: clamp(1rem, 0.8417rem + 0.6667vw, 1.375rem);
     line-height: clamp(1.25rem, 1.0389rem + 0.8889vw, 1.75rem);
     letter-spacing: .5px;
@@ -273,7 +277,7 @@ body.privacy {
 
     width: 294px;
 
-    padding: 0 44px 28px;
+    padding: 0 44px 16px;
     margin: 102px 0 0 -40px;
 
     border-radius: 25px;
@@ -363,6 +367,7 @@ body.privacy {
     padding-top: 16px;
     margin-right: 24px;
 
+    width: 100%;
     max-width: 260px;
 }
 .film__title {
@@ -377,8 +382,10 @@ body.privacy {
 }
 .film__text {
     font-weight: 400;
-    font-size: 18px;
-    line-height: 26px;
+    /* font-size: 18px;
+    line-height: 26px; */
+    font-size: clamp(0.75rem, 0.5917rem + 0.6667vw, 1.125rem);
+    line-height: clamp(1rem, 0.7361rem + 1.1111vw, 1.625rem);
     letter-spacing: .2px;
     text-align: right;
     color: #F8F8F2;
@@ -451,7 +458,7 @@ body.privacy {
     border-left: 1px solid #FFCA80;
 }
 .overview__block__title {
-    font-weight: 600;
+    font-weight: bold;
     font-size: 18px;
     line-height: 20px;
     color: #fff;
@@ -615,6 +622,7 @@ body.privacy {
     overflow: hidden;
 
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
     padding: 40px 64px;
@@ -626,9 +634,9 @@ body.privacy {
     background: radial-gradient(circle at 50% 50%, #1E234C 0%, #1E234B 5%, #0A0A18 80%, #030106 100%);
 }
 .use__type {
-    font-weight: 300;
-    font-size: 28px;
-    line-height: 32px;
+    font-weight: 400;
+    font-size: clamp(0.75rem, 0.3278rem + 1.7778vw, 1.75rem);
+    line-height: 40px;
     letter-spacing: .3px;
     color: #F8F8F2;
 
@@ -663,7 +671,7 @@ body.privacy {
     line-height: 40px;
 }
 .use__text {
-    font-weight: 400;
+    font-weight: 500;
     font-size: clamp(1rem, 0.7889rem + 0.8889vw, 1.5rem);
     line-height: clamp(1.25rem, 0.9861rem + 1.1111vw, 1.875rem);
     letter-spacing: .3px;
@@ -697,8 +705,8 @@ body.privacy {
     margin-bottom: clamp(3.25rem, 1.5rem + 8.75vw, 8.5rem);
 }
 .google__title {
-    font-weight: 300;
-    font-size: 28px;
+    font-weight: 400;
+    font-size: clamp(0.75rem, 0.3278rem + 1.7778vw, 1.75rem);
     line-height: 40px;
     letter-spacing: .3px;
     text-align: center;
@@ -719,9 +727,14 @@ body.privacy {
     margin: 0 -144px 60px;
 }
 .google .text {
+    font-size: clamp(1rem, 0.6833rem + 1.3333vw, 1.75rem);
+    line-height: clamp(1.25rem, 0.9333rem + 1.3333vw, 2rem);
     text-align: left;
 
     max-width: 690px;
+}
+.google .text:last-of-type {
+    margin-bottom: 40px;
 }
 .google__icons {
     display: flex;
@@ -745,8 +758,8 @@ body.privacy {
     margin-bottom: clamp(3.25rem, 1.5rem + 8.75vw, 8.5rem);
 }
 .ignore__title {
-    font-weight: 300;
-    font-size: 28px;
+    font-weight: 400;
+    font-size: clamp(0.75rem, 0.3278rem + 1.7778vw, 1.75rem);
     line-height: 40px;
     letter-spacing: .3px;
     color: #F8F8F2;
@@ -760,16 +773,19 @@ body.privacy {
     color: #FFCA80;
 }
 .ignore .text {
+    font-size: clamp(1rem, 0.6833rem + 1.3333vw, 1.75rem);
+    line-height: clamp(1.25rem, 0.9333rem + 1.3333vw, 2rem);
     text-align: left;
-    margin: 0 0 32px;
+
+    margin: 0 0 40px;
 }
 .ignore__animation {
     width: calc(100% + 144px * 2);
     margin: 0 -144px;
 }
 .ignore__desc {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: clamp(0.75rem, 0.5917rem + 0.6667vw, 1.125rem);
+    line-height: clamp(1rem, 0.7361rem + 1.1111vw, 1.625rem);
     letter-spacing: .2px;
     color: #F8F8F2;
 
@@ -785,6 +801,7 @@ body.privacy {
     overflow: hidden;
 
     display: flex;
+    align-items: center;
     gap: 32px;
 
     padding: 40px 64px;
@@ -793,6 +810,8 @@ body.privacy {
     max-width: 1252px;
 }
 .preview__content {
+    flex-shrink: 0;
+
     display: flex;
     flex-direction: column;
 
@@ -800,9 +819,9 @@ body.privacy {
     max-width: 450px;
 }
 .preview__type {
-    font-weight: 300;
-    font-size: 28px;
-    line-height: 32px;
+    font-weight: 400;
+    font-size: clamp(0.75rem, 0.3278rem + 1.7778vw, 1.75rem);
+    line-height: 40px;
     letter-spacing: .3px;
     color: #F8F8F2;
 
@@ -815,8 +834,8 @@ body.privacy {
     color: #FFCA80;
 }
 .preview__text {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: clamp(1rem, 0.8417rem + 0.6667vw, 1.375rem);
+    line-height: clamp(1.25rem, 0.9333rem + 1.3333vw, 2rem);
     letter-spacing: .2px;
     color: #F8F8F2;
 }
@@ -826,8 +845,8 @@ body.privacy {
 .preview__animation {
     flex-shrink: 0;
 
-    position: absolute;
-    right: -25%;
+    position: relative;
+    right: -10%;
 
     width: 1000px;
     margin-top: -16px;
@@ -839,8 +858,8 @@ body.privacy {
     margin-bottom: clamp(3.25rem, 1.5rem + 8.75vw, 8.5rem);
 }
 .interface__title {
-    font-weight: 300;
-    font-size: 28px;
+    font-weight: 400;
+    font-size: clamp(0.75rem, 0.3278rem + 1.7778vw, 1.75rem);
     line-height: 40px;
     letter-spacing: .3px;
     color: #F8F8F2;
@@ -854,16 +873,22 @@ body.privacy {
     color: #FFCA80;
 }
 .interface .text {
+    font-size: clamp(1rem, 0.6833rem + 1.3333vw, 1.75rem);
+    line-height: clamp(1.25rem, 0.9333rem + 1.3333vw, 2rem);
+    letter-spacing: .3px;
     text-align: left;
     margin: 0 0 32px;
+}
+.interface .text:last-of-type {
+    margin-bottom: 40px;
 }
 .interface__animation {
     width: calc(100% + 144px * 2);
     margin: 0 -144px;
 }
 .interface__desc {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: clamp(0.75rem, 0.5917rem + 0.6667vw, 1.125rem);
+    line-height: clamp(1rem, 0.7361rem + 1.1111vw, 1.625rem);
     letter-spacing: .2px;
     color: #F8F8F2;
 
@@ -878,8 +903,8 @@ body.privacy {
     margin-bottom: clamp(3.25rem, 1.5rem + 8.75vw, 8.5rem);
 }
 .view__title {
-    font-weight: 300;
-    font-size: 28px;
+    font-weight: 400;
+    font-size: clamp(0.75rem, 0.3278rem + 1.7778vw, 1.75rem);
     line-height: 40px;
     letter-spacing: .3px;
     text-align: center;
@@ -894,19 +919,22 @@ body.privacy {
     color: #FFCA80;
 }
 .view .text {
+    font-size: clamp(1rem, 0.6833rem + 1.3333vw, 1.75rem);
+    line-height: clamp(1.25rem, 0.9333rem + 1.3333vw, 2rem);
+    letter-spacing: .3px;
     text-align: center;
 
     max-width: 800px;
 
-    margin: 0 auto 32px;
+    margin: 0 auto 0;
 }
 .view__animation {
     width: calc(100% + 144px * 2);
     margin: 0 -144px;
 }
 .view__desc {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: clamp(0.75rem, 0.5917rem + 0.6667vw, 1.125rem);
+    line-height: clamp(1rem, 0.7361rem + 1.1111vw, 1.625rem);
     letter-spacing: .2px;
     color: #F8F8F2;
 
@@ -953,8 +981,8 @@ body.privacy {
     color: #F8F8F2;
 }
 .videos__text {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: clamp(0.875rem, 0.8222rem + 0.2222vw, 1rem);
+    line-height: clamp(1.125rem, 0.9139rem + 0.8889vw, 1.625rem);
     letter-spacing: .2px;
     color: #F8F8F2;
 }
@@ -1030,8 +1058,8 @@ body.privacy {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 .reviews__text {
-    font-size: 26px;
-    line-height: 38px;
+    font-size: clamp(1rem, 0.7361rem + 1.1111vw, 1.625rem);
+    line-height: clamp(1.25rem, 0.8278rem + 1.7778vw, 2.25rem);
     letter-spacing: .3px;
     color: #000000;
 
@@ -1039,16 +1067,16 @@ body.privacy {
 }
 .reviews__author {
     font-weight: bold;
-    font-size: 26px;
-    line-height: 38px;
+    font-size: clamp(1rem, 0.7361rem + 1.1111vw, 1.625rem);
+    line-height: clamp(1.25rem, 0.775rem + 2vw, 2.375rem);
     letter-spacing: .3px;
     color: #000000;
 
     margin-top: auto;
 }
 .reviews__appstore {
-    font-size: 26px;
-    line-height: 38px;
+    font-size: clamp(1rem, 0.7361rem + 1.1111vw, 1.625rem);
+    line-height: clamp(1.25rem, 0.775rem + 2vw, 2.375rem);
     letter-spacing: .3px;
     color: #000000;
 }
@@ -1134,8 +1162,8 @@ body.privacy {
 }
 .fetures__text {
     font-weight: normal;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: clamp(0.75rem, 0.6444rem + 0.4444vw, 1rem);
+    line-height: clamp(1.125rem, 0.9139rem + 0.8889vw, 1.625rem);
     letter-spacing: 0.2px;
     color: #C6C8CA;
 }
@@ -1207,8 +1235,8 @@ body.privacy {
     margin-bottom: 12px;
 }
 .faq__text {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: clamp(0.875rem, 0.6111rem + 1.1111vw, 1.5rem);
+    line-height: clamp(1.125rem, 0.7556rem + 1.5556vw, 2rem);
     
     color: #D2D2D7;
 }
@@ -1270,7 +1298,7 @@ body.privacy {
     color: #FFCA80;
 }
 .devolopers__type {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 28px;
     line-height: 32px;
     letter-spacing: .3px;
@@ -1280,6 +1308,9 @@ body.privacy {
     margin-bottom: 28px;
 }
 .devolopers .text {
+    font-size: clamp(1rem, 0.6833rem + 1.3333vw, 1.75rem);
+    line-height: clamp(1.25rem, 0.9333rem + 1.3333vw, 2rem);
+    letter-spacing: .3px;
     margin-bottom: 52px;
 }
 .devolopers .z-i-1 {
@@ -1339,7 +1370,7 @@ body.privacy {
     margin-bottom: clamp(3.25rem, 1.5rem + 8.75vw, 8.5rem);
 }
 .wallpapers__type {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 28px;
     line-height: 32px;
     letter-spacing: .3px;
@@ -1347,6 +1378,11 @@ body.privacy {
     color: #F8F8F2;
 
     margin-bottom: 28px;
+}
+.wallpapers .text {
+    font-size: clamp(1rem, 0.6833rem + 1.3333vw, 1.75rem);
+    line-height: clamp(1.25rem, 0.9333rem + 1.3333vw, 2rem);
+    letter-spacing: .3px;
 }
 .wallpapers__list {
     display: flex;
@@ -1358,11 +1394,11 @@ body.privacy {
     display: block;
     
     width: 100%;
-    height: auto;
 
     max-width: 190px;
 
     object-fit: contain;
+    aspect-ratio: 190 / 384;
 }
 .wallpapers__item + .wallpapers__item {
     margin-left: 24px;
@@ -1720,8 +1756,8 @@ body.privacy {
 }
   
 .cd-image-label {
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 18px;
     line-height: 20px;
     color: #000000;
     
@@ -1890,7 +1926,9 @@ body.privacy {
     }
 }
 @media screen and (max-width: 1268px) {
-
+    .ignore__desc {
+        top: -45px;
+    }
     .overview .text {
         text-align: center;
 
@@ -2042,6 +2080,17 @@ body.privacy {
     }
 }
 @media screen and (max-width: 1168px) {
+    .footer__column:last-of-type {
+        width: calc(100% / 4);
+    }
+    .wallpapers__list {
+        padding: 0 20px;
+    }
+    .wallpapers__item {
+        width: calc(100% / 4 - 12px * 3 / 4);
+        max-width: 100%;
+    }
+
     .use {
         align-items: center;
     }
@@ -2392,6 +2441,9 @@ body.privacy {
     .header__setapp img {
         max-height: unset;
     }
+    .header__getapp img {
+        object-position: left center;
+    }
 
     .hello {
         padding: 0 20px;
@@ -2487,9 +2539,6 @@ body.privacy {
     }
     .use__type {
         order: -3;
-
-        font-weight: 400;
-        font-size: 14px;
         text-align: center;
         
         margin: 0;
@@ -2550,9 +2599,6 @@ body.privacy {
         margin-bottom: 16px;
     }
     .google__title {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 18px;
         text-align: center;
         margin: 0;
     }
@@ -2567,9 +2613,6 @@ body.privacy {
         padding: 0 20px;
     }
     .ignore__title {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 18px;
         text-align: center;
         margin: 0;
     }
@@ -2579,10 +2622,6 @@ body.privacy {
         margin-bottom: 60px;
     }
     .interface__title {
-        font-weight: 400;
-        font-size: 14px;
-        text-align: center;
-
         margin: 0;
     }
     .interface .title {
@@ -2605,8 +2644,6 @@ body.privacy {
         margin: 0 0 16px;
     }
     .interface__desc {
-        font-size: 14px;
-        line-height: 18px;
         text-align: center;
 
         max-width: 350px;
@@ -2632,8 +2669,6 @@ body.privacy {
         display: contents;
     }
     .preview__type {
-        font-weight: 400;
-        font-size: 14px;
         text-align: center;
 
         margin: 0;
@@ -2647,7 +2682,6 @@ body.privacy {
         display: none;
     }
     .preview__text {
-        font-weight: 400;
         text-align: center;
 
         max-width: unset;
@@ -2706,8 +2740,6 @@ body.privacy {
         padding: 0 20px;
     }
     .view__title {
-        font-weight: 400;
-        font-size: 14px;
         text-align: center;
 
         margin: 0;
@@ -2756,9 +2788,6 @@ body.privacy {
         order: -1;
     }
     .videos__text {
-        font-size: 14px;
-        line-height: 18px;
-
         max-width: 464px;
 
         margin-top: 16px;
@@ -2796,18 +2825,7 @@ body.privacy {
         height: auto;
     }
     .reviews__text {
-        font-size: 16px;
-        line-height: 20px;
-
         margin-bottom: 16px;
-    }
-    .reviews__author {
-        font-size: 16px;
-        line-height: 20px;
-    }
-    .reviews__appstore {
-        font-size: 16px;
-        line-height: 20px;
     }
     .reviews__toggler {
         font-size: 16px;
@@ -2841,10 +2859,6 @@ body.privacy {
 
         margin-bottom: 12px;
     }
-    .fetures__text {
-        font-size: 12px;
-        line-height: 16px;
-    }
 
     .faq {
         flex-direction: column;
@@ -2863,10 +2877,6 @@ body.privacy {
         line-height: 40px;
         
         margin-bottom: 8px;
-    }
-    .faq__text {
-        font-size: 14px;
-        line-height: 18px;
     }
     .faq__text + .faq__text {
         margin-top: 16px;
@@ -2911,10 +2921,6 @@ body.privacy {
         width: 100%;
 
         margin-bottom: 32px;
-    }
-    .wallpapers__item {
-        width: calc(100% / 4 - 8px * 3 / 4);
-        max-width: 100%;
     }
     .wallpapers__item + .wallpapers__item {
         margin-left: 8px;
@@ -3064,8 +3070,6 @@ body.privacy {
 
     .view__desc,
     .ignore__desc {
-        font-size: 14px;
-        line-height: 18px;
         text-align: center;
         max-width: 350px;
         margin: 16px auto;
@@ -3150,7 +3154,7 @@ body.privacy {
     margin-bottom: 12px;
 }
 .privacy .text {
-    font-weight: 300;
+    font-weight: 400;
     font-size: clamp(1rem, 0.958rem + 0.208vw, 1.125rem);
     line-height: clamp(1.625rem, 1.583rem + 0.208vw, 1.75rem);
     text-align: left;
