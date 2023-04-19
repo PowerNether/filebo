@@ -444,6 +444,9 @@ body.privacy {
 .overview .title {
     margin-bottom: 36px;
 }
+.overview .title br {
+    display: none;
+}
 .overview .title span {
     color: #FFCA80;
 }
@@ -868,6 +871,9 @@ body.privacy {
 }
 .interface .title {
     text-align: left;
+}
+.interface .title br {
+    display: none;
 }
 .interface .title span {
     color: #FFCA80;
@@ -1299,8 +1305,8 @@ body.privacy {
 }
 .devolopers__type {
     font-weight: 400;
-    font-size: 28px;
-    line-height: 32px;
+    font-size: clamp(0.75rem, 0.3278rem + 1.7778vw, 1.75rem);
+    line-height: 40px;
     letter-spacing: .3px;
     text-align: center;
     color: #F8F8F2;
@@ -1371,13 +1377,11 @@ body.privacy {
 }
 .wallpapers__type {
     font-weight: 400;
-    font-size: 28px;
-    line-height: 32px;
+    font-size: clamp(0.75rem, 0.3278rem + 1.7778vw, 1.75rem);
+    line-height: 40px;
     letter-spacing: .3px;
     text-align: center;
     color: #F8F8F2;
-
-    margin-bottom: 28px;
 }
 .wallpapers .text {
     font-size: clamp(1rem, 0.6833rem + 1.3333vw, 1.75rem);
@@ -1549,6 +1553,59 @@ body.privacy {
     cursor: pointer;
 }
 .beta__btn:hover {
+    color: #4A90E2;
+    background: #F8F8F2;
+}
+
+.beta__send__form {
+    display: flex;
+    flex-direction: column;
+}
+.beta__send__form label {
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: .3px;
+    text-align: left;
+    color: #000000;
+}
+.beta__send__form input {
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 80px;
+    color: #A9A9A9;
+
+    width: 100%;
+
+    padding: 0 32px;
+
+    border: none;
+    background: #333333;
+}
+.beta__send__form input:focus {
+    outline: none;
+}
+.beta__send__form label + input {
+    margin-bottom: 16px;
+}
+.beta__send__form input + button {
+    margin-top: 16px;
+}
+.beta__send__form button {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 80px;
+    color: #F8F8F2;
+
+    width: 100%;
+
+    border: none;
+    background: #4A90E2;
+
+    transition: color .35s, background .35s;
+
+    cursor: pointer;
+}
+.beta__send__form button:hover {
     color: #4A90E2;
     background: #F8F8F2;
 }
@@ -1809,6 +1866,8 @@ body.privacy {
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+
+    border-right: 2px solid #000000;
 }
 .cd-resize-img img {
     position: absolute;
@@ -1871,7 +1930,7 @@ body.privacy {
     /* center the element */
     left: 50%;
     top: 50%;
-    margin-left: -22px;
+    margin-left: -23px;
     margin-top: -22px;
     border-radius: 50%;
     background: #000000 url('../images/macbook-compare-icon.png') no-repeat center center;
@@ -2461,7 +2520,7 @@ body.privacy {
     .hello__download {
         padding: 0 48px 16px;
 
-        width: 100%;
+        width: 85%;
     }
     .hello__filebo {
         margin: -40px auto 0;
@@ -2509,7 +2568,7 @@ body.privacy {
         margin: 0 auto 20px;
     }
     .overview .title br {
-        display: none;
+        display: block;
     }
     .overview__image {
         width: 100%;
@@ -2624,6 +2683,9 @@ body.privacy {
     .interface__title {
         margin: 0;
     }
+    .interface .title br {
+        display: block;
+    }
     .interface .title {
         text-align: center;
 
@@ -2679,7 +2741,7 @@ body.privacy {
         margin-bottom: 16px;
     }
     .preview .title br {
-        display: none;
+        display: block;
     }
     .preview__text {
         text-align: center;
@@ -2697,31 +2759,6 @@ body.privacy {
     .preview__line {
         display: none;
     }
-    .navigation .preview__image {
-        position: relative;
-        right: unset;
-        bottom: unset;
-        transform: unset;
-
-        width: 100%;
-        height: auto;
-
-        margin: 16px -20px -32px;
-    }
-    .preview__image {
-        position: relative;
-        right: unset;
-        bottom: unset;
-        transform: unset;
-
-        width: 100%;
-        height: auto;
-
-        margin: 16px -20px -40px;
-    }
-    .navigation .preview__image {
-        margin: 16px 0 0;
-    }
     .preview__desc {
         font-size: 14px;
         line-height: 18px;
@@ -2735,6 +2772,33 @@ body.privacy {
         
         margin: 12px auto 0;
     }
+    .preview__image {
+        position: relative;
+        right: unset;
+        bottom: unset;
+        transform: unset;
+
+        width: 100%;
+        height: auto;
+
+        margin: 16px -20px -40px;
+    }
+
+    .navigation .preview__image {
+        position: relative;
+        right: unset;
+        bottom: unset;
+        transform: unset;
+
+        width: 100%;
+        height: auto;
+
+        margin: 16px -20px -32px;
+    }
+    .navigation .preview__image {
+        margin: 16px 0 0;
+    }
+    
 
     .view {
         padding: 0 20px;
@@ -2745,14 +2809,10 @@ body.privacy {
         margin: 0;
     }
     .view .title br {
-        display: none;
+        display: block;
     }
     .view .text {
         margin-bottom: 16px;
-    }
-
-    .videos .title br {
-        display: none;
     }
 
     .videos {
@@ -2763,6 +2823,9 @@ body.privacy {
     }
     .videos .title {
         margin-bottom: 32px;
+    }
+    .videos .title br {
+        display: block;
     }
     .videos__list {
         display: contents;
@@ -2899,8 +2962,6 @@ body.privacy {
         margin-right: 20px;
     }
     .devolopers__type {
-        font-weight: 400;
-        font-size: 14px;
         text-align: center;
 
         margin: 0;
@@ -2948,6 +3009,8 @@ body.privacy {
         line-height: 46px;
 
         padding: 0 16px;
+
+        border-radius: 0;
     }
     .beta__btn {
         font-size: 20px;
@@ -3049,6 +3112,9 @@ body.privacy {
     }
 }
 @media screen and (max-width: 568px) {
+    .hello__download {
+        width: 90%;
+    }
     .overview__text {
         font-size: 16px;
         line-height: 20px;

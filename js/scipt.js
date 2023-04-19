@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function linkScroll () {
         const header = document.querySelector('.header');
         const links = Array.from(document.querySelectorAll('.hedear__link')) || [];
+        const getapp = document.querySelector('.header__getapp');
+        if (getapp) links.push(getapp);
     
         links.forEach(link => {
             link.addEventListener('click', function (e) {
