@@ -93,6 +93,47 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleFAQ();
 })
 
+jQuery.event.special.touchstart = {
+    setup: function( _, ns, handle ) {
+        this.addEventListener("touchstart", handle, { passive: false });
+    }
+};
+jQuery.event.special.touchmove = {
+    setup: function( _, ns, handle ) {
+        this.addEventListener("touchmove", handle, { passive: false });
+    }
+};
+jQuery.event.special.wheel = {
+    setup: function( _, ns, handle ){
+        this.addEventListener("wheel", handle, { passive: true });
+    }
+};
+jQuery.event.special.mousewheel = {
+    setup: function( _, ns, handle ){
+        this.addEventListener("mousewheel", handle, { passive: true });
+    }
+};
+isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
 jQuery(document).ready(function($){
     var dragging = false,
         scrolling = false,
@@ -151,6 +192,9 @@ jQuery(document).ready(function($){
     //draggable funtionality - credits to http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
     function drags(dragElement, resizeElement, container, labelContainer, labelResizeElement) {
         dragElement.on("mousedown vmousedown", function(e) {
+            if (isMobile.any()) {
+                $('body').css('overflow-y', 'hidden');
+            }
             dragElement.addClass('draggable');
             resizeElement.addClass('resizable');
 
@@ -176,6 +220,9 @@ jQuery(document).ready(function($){
         }).on("mouseup vmouseup", function(e) {
             dragElement.removeClass('draggable');
             resizeElement.removeClass('resizable');
+            if (isMobile.any()) {
+                $('body').css('overflow-y', 'unset');
+            }
         });
     }
 
