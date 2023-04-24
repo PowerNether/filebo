@@ -91,6 +91,33 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
     toggleFAQ();
+
+    function customPlayer () {
+        let players = document.querySelectorAll('.videos__preview');
+
+        players.forEach(player => {
+            player.addEventListener('click', function () {
+                if (player.paused || player.ended) {
+                    player.play();
+                } else {
+                    player.pause();
+                }
+            })
+
+            function togglePlayButton () {
+                let parent = player.parentNode;
+                let button = parent.querySelector('.videos__play');
+    
+                if (button) {
+                    button.classList.toggle('hidden');
+                }
+            }
+        
+            player.addEventListener('play', togglePlayButton);
+            player.addEventListener('pause', togglePlayButton);
+        })
+    }
+    customPlayer();
 })
 
 jQuery.event.special.touchstart = {
