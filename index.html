@@ -30,7 +30,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
     <link rel="manifest" href="./site.webmanifest">
 </head>
-<body>
+<body class="index">
     <header class="header">
         <div class="header__container">
             <div class="header__head">
@@ -376,8 +376,8 @@
         <div class="videos__list">
             <div class="videos__item">
                 <div class="videos__video">
-                    <video alt="preview" class="videos__preview">
-                        <source src="./videos/video.mp4" type="video/mp4"></source>
+                    <video alt="preview" class="videos__preview" preload="metadata">
+                        <source src="./videos/video.mp4#t=0.1" type="video/mp4"></source>
                     </video>
                     <img src="./images/Play.svg" alt="play" class="videos__play">
                 </div>
@@ -398,16 +398,16 @@
                     </p>
                 </div>
                 <div class="videos__video">
-                    <video alt="preview" class="videos__preview">
-                        <source src="./videos/video.mp4" type="video/mp4"></source>
+                    <video alt="preview" class="videos__preview" preload="metadata">
+                        <source src="./videos/video.mp4#t=0.1" type="video/mp4"></source>
                     </video>
                     <img src="./images/Play.svg" alt="play" class="videos__play">
                 </div>
             </div>
             <div class="videos__item">
                 <div class="videos__video">
-                    <video alt="preview" class="videos__preview">
-                        <source src="./videos/video.mp4" type="video/mp4"></source>
+                    <video alt="preview" class="videos__preview" preload="metadata">
+                        <source src="./videos/video.mp4#t=0.1" type="video/mp4"></source>
                     </video>
                     <img src="./images/Play.svg" alt="play" class="videos__play">
                 </div>
@@ -816,6 +816,15 @@
             </div>
         </div>
     </div>
+    <!-- Google -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FY5VK8KWK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-2FY5VK8KWK');
+    </script>
 
     <script src="./js/EQCSS.min.js"></script>
     <style>
@@ -829,10 +838,10 @@
             }
 
             $this .HYPE_scene {
-            position: absolute !important;
-            top: 50% !important;
-            left: 50% !important;
-            transform: translateX(-50%) translateY(-50%) scale(eval("offsetWidth / style.width.split('px')[0]"));
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translateX(-50%) translateY(-50%) scale(eval("offsetWidth / style.width.split('px')[0]"));
             }
 
         }

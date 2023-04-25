@@ -1024,6 +1024,8 @@ body.privacy {
     width: 100%;
     height: auto;
 
+    border-radius: 8px;
+
     aspect-ratio: 720 / 468;
 }
 .videos__play {
@@ -2025,7 +2027,7 @@ body.privacy {
     }
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1440px) {
     .header.sticky {
         padding: 12px 0;
     }
@@ -2066,6 +2068,9 @@ body.privacy {
         font-size: 16px;
         line-height: 24px;
     }
+    .overview__block {
+        padding-left: 16px;
+    }
     .overview__block__1 {
         left: 65px;
         height: 185px;
@@ -2076,9 +2081,9 @@ body.privacy {
         max-width: 300px;
     }
     .overview__block__3 {
-        right: -65px;
+        right: 0px;
         height: 145px;
-        max-width: 275px;
+        max-width: 210px;
     }
     .overview__block__4 {
         left: 50px;
@@ -2093,9 +2098,16 @@ body.privacy {
 
     .use {
         max-width: 1124px;
+        padding: 32px 48px;
+    }
+    .use__type {
+        margin-bottom: 16px;
     }
     .use .title {
-        margin-bottom: 32px;
+        margin-bottom: 24px;
+    }
+    .use__text + .use__text {
+        margin-top: 24px;   
     }
     .use__animation {
         max-width: 468px;
@@ -2200,33 +2212,6 @@ body.privacy {
         text-align: center;
     }
 
-    .use__image {
-        margin-right: -320px;
-    }
-    .use {
-        flex-direction: column;
-    }
-    .use__type {
-        text-align: center;
-    }
-    .use .title {
-        text-align: center;
-    }
-    .use__command {
-        align-items: center;
-    }
-    .use__text {
-        max-width: 735px;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .use__animation {
-        margin-top: 48px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .ignore__animation {
         position: static;
 
@@ -2317,6 +2302,9 @@ body.privacy {
     .use__image {
         max-width: 645px;
     }
+    .use__animation {
+        max-width: 388px;
+    }
 
     .reviews {
         max-width: 1082px;
@@ -2395,6 +2383,7 @@ body.privacy {
     }
 }
 @media screen and (max-width: 1068px) {
+
     .overview__block {
         display: none;
     }
@@ -2438,9 +2427,34 @@ body.privacy {
     .overview .text {
         max-width: 600px;
     }
+
+    .use__image {
+        margin-right: -320px;
+    }
+    .use {
+        flex-direction: column;
+    }
+    .use__type {
+        text-align: center;
+    }
+    .use .title {
+        text-align: center;
+    }
+    .use__command {
+        align-items: center;
+    }
     .use__text {
         max-width: 600px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
+    .use__animation {
+        margin-top: 48px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .google .text {
         max-width: 600px;
     }

@@ -161,7 +161,8 @@ isMobile = {
     }
 };
 
-jQuery(document).ready(function($){
+jQuery(document).ready(function($) {
+    if (!document.body.classList.contains('index')) return;
     var dragging = false,
         scrolling = false,
         resizing = false;
