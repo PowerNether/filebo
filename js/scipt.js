@@ -1,4 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Utilites
+    let isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+    function offset(el) {
+        box = el.getBoundingClientRect();
+        docElem = document.documentElement;
+        return {
+            top: box.top + window.pageYOffset - docElem.clientTop,
+            left: box.left + window.pageXOffset - docElem.clientLeft
+        };
+    }
+
+    // Header
     function stickyHeader () {
         const header = document.querySelector('.header');
     
@@ -50,8 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (!document.body.classList.contains('privacy')) linkScroll();
     
+    // Modal Window
     MicroModal.init();
     
+    // Accardions
     function toggleReviews () {
         let toggler = document.querySelector('.reviews__toggler');
     
@@ -92,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     toggleFAQ();
 
+    // Player
     function customPlayer () {
         let players = document.querySelectorAll('.videos__preview');
 
@@ -118,170 +152,213 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
     customPlayer();
-})
 
-jQuery.event.special.touchstart = {
-    setup: function( _, ns, handle ) {
-        this.addEventListener("touchstart", handle, { passive: false });
-    }
-};
-jQuery.event.special.touchmove = {
-    setup: function( _, ns, handle ) {
-        this.addEventListener("touchmove", handle, { passive: false });
-    }
-};
-jQuery.event.special.wheel = {
-    setup: function( _, ns, handle ){
-        this.addEventListener("wheel", handle, { passive: true });
-    }
-};
-jQuery.event.special.mousewheel = {
-    setup: function( _, ns, handle ){
-        this.addEventListener("mousewheel", handle, { passive: true });
-    }
-};
-isMobile = {
-    Android: function() {
-        return navigator.userAgent.match(/Android/i);
-    },
-    BlackBerry: function() {
-        return navigator.userAgent.match(/BlackBerry/i);
-    },
-    iOS: function() {
-        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-    },
-    Opera: function() {
-        return navigator.userAgent.match(/Opera Mini/i);
-    },
-    Windows: function() {
-        return navigator.userAgent.match(/IEMobile/i);
-    },
-    any: function() {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-    }
-};
-
-jQuery(document).ready(function($) {
-    if (!document.body.classList.contains('index')) return;
-    var dragging = false,
-        scrolling = false,
-        resizing = false;
-    //cache jQuery objects
-    var imageComparisonContainers = $('.cd-image-container');
-    //check if the .cd-image-container is in the viewport 
-    //if yes, animate it
-    checkPosition(imageComparisonContainers);
-    $(window).on('scroll', function(){
-        if( !scrolling) {
-            scrolling =  true;
-            ( !window.requestAnimationFrame )
-                ? setTimeout(function(){checkPosition(imageComparisonContainers);}, 100)
-                : requestAnimationFrame(function(){checkPosition(imageComparisonContainers);});
-        }
-    });
+    // Image Compare
+    function imageCompare () {
+        if (!document.body.classList.contains('index')) return;
     
-    //make the .cd-handle element draggable and modify .cd-resize-img width according to its position
-    imageComparisonContainers.each(function(){
-        var actual = $(this);
-        drags(actual.find('.cd-handle'), actual.find('.cd-resize-img'), actual, actual.find('.cd-image-label[data-type="original"]'), actual.find('.cd-image-label[data-type="modified"]'));
-    });
-
-    //upadate images label visibility
-    $(window).on('resize', function(){
-        if( !resizing) {
-            resizing =  true;
-            ( !window.requestAnimationFrame )
-                ? setTimeout(function(){checkLabel(imageComparisonContainers);}, 100)
-                : requestAnimationFrame(function(){checkLabel(imageComparisonContainers);});
-        }
-    });
-
-    function checkPosition(container) {
-        container.each(function(){
-            var actualContainer = $(this);
-            if( $(window).scrollTop() + $(window).height()*0.5 > actualContainer.offset().top) {
-                actualContainer.addClass('is-visible');
-            }
-        });
-
-        scrolling = false;
-    }
-
-    function checkLabel(container) {
-        container.each(function(){
-            var actual = $(this);
-            updateLabel(actual.find('.cd-image-label[data-type="modified"]'), actual.find('.cd-resize-img'), 'left');
-            updateLabel(actual.find('.cd-image-label[data-type="original"]'), actual.find('.cd-resize-img'), 'right');
-        });
-
-        resizing = false;
-    }
-
-    //draggable funtionality - credits to http://css-tricks.com/snippets/jquery/draggable-without-jquery-ui/
-    function drags(dragElement, resizeElement, container, labelContainer, labelResizeElement) {
-        dragElement.on("mousedown vmousedown", function(e) {
-            if (isMobile.any()) {
-                $('body').css('overflow-y', 'hidden');
-            }
-            dragElement.addClass('draggable');
-            resizeElement.addClass('resizable');
-
-            var dragWidth = dragElement.outerWidth(),
-                xPosition = dragElement.offset().left + dragWidth - e.pageX,
-                containerOffset = container.offset().left,
-                containerWidth = container.outerWidth(),
-                minLeft = containerOffset + 10,
-                maxLeft = containerOffset + containerWidth - dragWidth - 10;
-            
-            dragElement.parents().on("mousemove vmousemove", function(e) {
-                if( !dragging) {
-                    dragging =  true;
-                    ( !window.requestAnimationFrame )
-                        ? setTimeout(function(){animateDraggedHandle(e, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth, resizeElement, labelContainer, labelResizeElement);}, 100)
-                        : requestAnimationFrame(function(){animateDraggedHandle(e, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth, resizeElement, labelContainer, labelResizeElement);});
+        let isDragging = false;
+        let isScrolling = false;
+        let isResizing = false;
+    
+        let imageCompareContainers = document.querySelectorAll('.cd-image-container');
+    
+        imageCompareContainers.forEach(container => {
+            let handle = container.querySelector('.cd-handle');
+            let resizeImage = container.querySelector('.cd-resize-img');
+            let labelOriginal = container.querySelector('.cd-image-label[data-type="original"]')
+            let labelModified = container.querySelector('.cd-image-label[data-type="modified"]')
+    
+            if (!handle && !resizeImage && !labelOriginal && !labelModified) return;
+    
+            drags(handle, resizeImage, container, labelOriginal, labelModified)
+        })
+    
+        checkPosition(imageCompareContainers);
+    
+        window.addEventListener(
+            'scroll',
+            function () {
+                if (!isScrolling) {
+                    isScrolling = true;
+    
+                    if (!window.requestAnimationFrame) {
+                        setTimeout(() => { checkPosition(imageCompareContainers) }, 100);
+                    } else {
+                        requestAnimationFrame(() => { checkPosition(imageCompareContainers) });
+                    }
                 }
-            }).on("mouseup vmouseup", function(e){
-                dragElement.removeClass('draggable');
-                resizeElement.removeClass('resizable');
-            });
-            e.preventDefault();
-        }).on("mouseup vmouseup", function(e) {
-            dragElement.removeClass('draggable');
-            resizeElement.removeClass('resizable');
-            if (isMobile.any()) {
-                $('body').css('overflow-y', 'unset');
-            }
-        });
-    }
-
-    function animateDraggedHandle(e, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth, resizeElement, labelContainer, labelResizeElement) {
-        var leftValue = e.pageX + xPosition - dragWidth;   
-        //constrain the draggable element to move inside his container
-        if(leftValue < minLeft ) {
-            leftValue = minLeft;
-        } else if ( leftValue > maxLeft) {
-            leftValue = maxLeft;
+            }, 
+            { passive: true }
+        );
+        window.addEventListener(
+            'resize',
+            function () {
+                if (!isResizing) {
+                    isResizing = true;
+    
+                    if (!window.requestAnimationFrame) {
+                        setTimeout(() => { checkLabel(imageCompareContainers) }, 100);
+                    } else {
+                        requestAnimationFrame(() => { checkLabel(imageCompareContainers) });
+                    }
+                }
+            },
+            { passive: true }
+        );
+    
+        function checkPosition (containers) {
+            containers.forEach(container => {
+                if (window.scrollY + window.innerHeight * 0.5 > offset(container).top) {
+                    container.classList.add('is-visible');
+                }
+            })
+    
+            isScrolling = false;
         }
-
-        var widthValue = (leftValue + dragWidth/2 - containerOffset)*100/containerWidth+'%';
         
-        $('.draggable').css('left', widthValue).on("mouseup vmouseup", function() {
-            $(this).removeClass('draggable');
-            resizeElement.removeClass('resizable');
-        });
-
-        $('.resizable').css('width', widthValue); 
-
-        updateLabel(labelResizeElement, resizeElement, 'left');
-        updateLabel(labelContainer, resizeElement, 'right');
-        dragging =  false;
-    }
-
-    function updateLabel(label, resizeElement, position) {
-        if(position == 'left') {
-            ( label.offset().left + label.outerWidth() < resizeElement.offset().left + resizeElement.outerWidth() ) ? label.removeClass('is-hidden') : label.addClass('is-hidden') ;
-        } else {
-            ( label.offset().left > resizeElement.offset().left + resizeElement.outerWidth() ) ? label.removeClass('is-hidden') : label.addClass('is-hidden') ;
+        function checkLabel (containers) {
+            containers.forEach(container => {
+                let labelOriginal = container.querySelector('.cd-image-label[data-type="original"]');
+                let labelModified = container.querySelector('.cd-image-label[data-type="modified"]');
+                let resizeImage = container.querySelector('.cd-resize-img');
+    
+                if (!labelOriginal && !labelModified && !resizeImage) return;
+    
+                updateLabel(labelModified, resizeImage, 'left');
+                updateLabel(labelOriginal, resizeImage, 'right');
+            })
+    
+            isResizing = false;
+        }
+    
+        function drags (handle, resizeImage, container, labelOriginal, labelModified) {
+            let handleWidth = handle.offsetWidth;
+            let handlePosition = offset(handle).left + handleWidth - event.pageX;
+            let containerPosition = offset(container).left;
+            let containerWidth = container.offsetWidth;
+            let minLeft = containerPosition + 10;
+            let maxLeft = containerPosition + containerWidth - handleWidth - 10;
+    
+            handle.addEventListener(
+                'mousedown', 
+                function (event) {
+                    event.preventDefault();
+    
+                    if (isMobile.any()) document.body.style.overflowY = 'hidden';
+    
+                    handleWidth = handle.offsetWidth;
+                    handlePosition = offset(handle).left + handleWidth - event.pageX;
+                    containerPosition = offset(container).left;
+                    containerWidth = container.offsetWidth;
+                    minLeft = containerPosition + 10;
+                    maxLeft = containerPosition + containerWidth - handleWidth - 10;
+    
+                    handle.classList.add('draggable');
+                    resizeImage.classList.add('resizable');
+    
+                    isDragging = true;
+                },
+                { passive: false }
+            )
+            handle.addEventListener(
+                'mouseup',
+                function () {
+                    if (isMobile.any()) document.body.style.overflowY = 'unset';
+    
+                    handle.classList.remove('draggable');
+                    resizeImage.classList.remove('resizable');
+    
+                    isDragging = false;
+                }
+            )
+    
+            handle.parentNode.addEventListener(
+                'mousemove',
+                function (event) {
+                    if (isDragging) {
+                        if (!window.requestAnimationFrame) {
+                            setTimeout(function () {
+                                animateDraggedHandle(
+                                    event,
+                                    handle,
+                                    handlePosition, 
+                                    handleWidth, 
+                                    minLeft, 
+                                    maxLeft, 
+                                    containerPosition, 
+                                    containerWidth, 
+                                    resizeImage, 
+                                    labelOriginal, 
+                                    labelModified
+                                );
+                            }, 100)
+                        } else {
+                            requestAnimationFrame(function () {
+                                animateDraggedHandle(
+                                    event, 
+                                    handle, 
+                                    handlePosition, 
+                                    handleWidth, 
+                                    minLeft, 
+                                    maxLeft, 
+                                    containerPosition, 
+                                    containerWidth, 
+                                    resizeImage, 
+                                    labelOriginal, 
+                                    labelModified
+                                );
+                            });
+                        }
+                    }
+                },
+                { passive: true }
+            )
+            document.body.parentNode.addEventListener(
+                'mouseup',
+                function () {
+                    handle.classList.remove('draggable');
+                    resizeImage.classList.remove('resizable');
+    
+                    isDragging = false;
+                },
+                { passive: true }
+            );
+        }
+        
+        function updateLabel (label, resizeImage, position) {
+            if (position == 'left') {
+                if (offset(label).left + label.offsetWidth < offset(resizeImage).left + resizeImage.offsetWidth) {
+                    label.classList.remove('is-hidden');
+                } else {
+                    label.classList.add('is-hidden');
+                }
+            } else {
+                if (offset(label).left > offset(resizeImage).left + resizeImage.offsetWidth) {
+                    label.classList.remove('is-hidden');
+                } else  {
+                    label.classList.add('is-hidden');
+                }
+            }
+        }
+    
+        function animateDraggedHandle (event, handle, handlePosition, handleWidth, minLeft, maxLeft, containerPosition, containerWidth, resizeImage, labelOriginal, labelModified) {
+            let left = event.pageX + handlePosition - handleWidth;
+            
+            if (left < minLeft ) {
+                left = minLeft;
+            } else if ( left > maxLeft) {
+                left = maxLeft;
+            }
+    
+            let width = (left + handleWidth / 2 - containerPosition) * 100 / containerWidth + '%';
+    
+            handle.style.left = width;
+            resizeImage.style.width = width;
+    
+            updateLabel(labelModified, resizeImage, 'left');
+            updateLabel(labelOriginal, resizeImage, 'right');
         }
     }
-});
+    imageCompare();
+})
