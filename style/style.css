@@ -1846,6 +1846,17 @@ body.privacy {
     background: #F8F8F2;
 }
 
+.modal__film__video {
+    display: block;
+    
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 16 / 9;
+
+    border-radius: 8px;
+}
+
 /* Сравнение фото */
 .cd-image-container {
     position: relative;

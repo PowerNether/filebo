@@ -82,7 +82,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!document.body.classList.contains('privacy')) linkScroll();
     
     // Modal Window
-    MicroModal.init();
+    MicroModal.init({
+        disableScroll: true,
+        onClose: modal => {
+            let video = modal.querySelector('video');
+            if (video) video.pause();
+        },
+    });
     
     // Accardions
     function toggleReviews () {
