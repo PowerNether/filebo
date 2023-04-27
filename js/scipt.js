@@ -246,90 +246,90 @@ document.addEventListener("DOMContentLoaded", function () {
             let minLeft = containerPosition + 10;
             let maxLeft = containerPosition + containerWidth - handleWidth - 10;
     
-            handle.addEventListener(
-                'mousedown', 
-                function (event) {
-                    event.preventDefault();
+            
+            function handleMouseDown () {
+                event.preventDefault();
+
+                if (isMobile.any()) document.body.style.overflowY = 'hidden';
+
+                handleWidth = handle.offsetWidth;
+                handlePosition = offset(handle).left + handleWidth - event.pageX;
+                containerPosition = offset(container).left;
+                containerWidth = container.offsetWidth;
+                minLeft = containerPosition + 10;
+                maxLeft = containerPosition + containerWidth - handleWidth - 10;
+
+                handle.classList.add('draggable');
+                resizeImage.classList.add('resizable');
+
+                isDragging = true;
+            }
+
+            handle.addEventListener('mousedown', handleMouseDown)
+            handle.addEventListener('touchstart', handleMouseDown)
+            
+            function handleMouseUp () {
+                if (isMobile.any()) document.body.style.overflowY = 'unset';
+
+                handle.classList.remove('draggable');
+                resizeImage.classList.remove('resizable');
+
+                isDragging = false;
+            }
+
+            handle.addEventListener('mouseup', handleMouseUp);
+            handle.addEventListener('touchend', handleMouseUp);
     
-                    if (isMobile.any()) document.body.style.overflowY = 'hidden';
-    
-                    handleWidth = handle.offsetWidth;
-                    handlePosition = offset(handle).left + handleWidth - event.pageX;
-                    containerPosition = offset(container).left;
-                    containerWidth = container.offsetWidth;
-                    minLeft = containerPosition + 10;
-                    maxLeft = containerPosition + containerWidth - handleWidth - 10;
-    
-                    handle.classList.add('draggable');
-                    resizeImage.classList.add('resizable');
-    
-                    isDragging = true;
-                },
-                { passive: false }
-            )
-            handle.addEventListener(
-                'mouseup',
-                function () {
-                    if (isMobile.any()) document.body.style.overflowY = 'unset';
-    
-                    handle.classList.remove('draggable');
-                    resizeImage.classList.remove('resizable');
-    
-                    isDragging = false;
-                }
-            )
-    
-            handle.parentNode.addEventListener(
-                'mousemove',
-                function (event) {
-                    if (isDragging) {
-                        if (!window.requestAnimationFrame) {
-                            setTimeout(function () {
-                                animateDraggedHandle(
-                                    event,
-                                    handle,
-                                    handlePosition, 
-                                    handleWidth, 
-                                    minLeft, 
-                                    maxLeft, 
-                                    containerPosition, 
-                                    containerWidth, 
-                                    resizeImage, 
-                                    labelOriginal, 
-                                    labelModified
-                                );
-                            }, 100)
-                        } else {
-                            requestAnimationFrame(function () {
-                                animateDraggedHandle(
-                                    event, 
-                                    handle, 
-                                    handlePosition, 
-                                    handleWidth, 
-                                    minLeft, 
-                                    maxLeft, 
-                                    containerPosition, 
-                                    containerWidth, 
-                                    resizeImage, 
-                                    labelOriginal, 
-                                    labelModified
-                                );
-                            });
-                        }
+            function handleMouseMove (event) {
+                if (isDragging) {
+                    if (!window.requestAnimationFrame) {
+                        setTimeout(function () {
+                            animateDraggedHandle(
+                                event,
+                                handle,
+                                handlePosition, 
+                                handleWidth, 
+                                minLeft, 
+                                maxLeft, 
+                                containerPosition, 
+                                containerWidth, 
+                                resizeImage, 
+                                labelOriginal, 
+                                labelModified
+                            );
+                        }, 100)
+                    } else {
+                        requestAnimationFrame(function () {
+                            animateDraggedHandle(
+                                event, 
+                                handle, 
+                                handlePosition, 
+                                handleWidth, 
+                                minLeft, 
+                                maxLeft, 
+                                containerPosition, 
+                                containerWidth, 
+                                resizeImage, 
+                                labelOriginal, 
+                                labelModified
+                            );
+                        });
                     }
-                },
-                { passive: true }
-            )
-            document.body.parentNode.addEventListener(
-                'mouseup',
-                function () {
-                    handle.classList.remove('draggable');
-                    resizeImage.classList.remove('resizable');
-    
-                    isDragging = false;
-                },
-                { passive: true }
-            );
+                }
+            }
+
+            handle.parentNode.addEventListener('mousemove', handleMouseMove, { passive: true })
+            handle.parentNode.addEventListener('touchmove', handleMouseMove, { passive: true })
+            
+            function documentMouseUp () {
+                handle.classList.remove('draggable');
+                resizeImage.classList.remove('resizable');
+
+                isDragging = false;
+            }
+
+            document.body.parentNode.addEventListener('mouseup', documentMouseUp, { passive: true });
+            document.body.parentNode.addEventListener('touchend', documentMouseUp, { passive: true });
         }
         
         function updateLabel (label, resizeImage, position) {
