@@ -400,6 +400,9 @@ body.privacy {
 }
 .film__preview {
     width: 100%;
+    height: auto;
+
+    aspect-ratio: 640 / 360;
 
     border-radius: 32px;
 
@@ -575,6 +578,9 @@ body.privacy {
     background: url('../images/ob5.png') center / contain no-repeat;
 }
 .overview__image {
+    width: 100%;
+    height: auto;
+
     margin-bottom: 40px;
 }
 .overview .text {
@@ -1438,6 +1444,7 @@ body.privacy {
     display: block;
     
     width: 100%;
+    height: auto;
 
     max-width: 190px;
 
