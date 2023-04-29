@@ -84,6 +84,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Modal Window
     MicroModal.init({
         disableScroll: true,
+        onShow: modal => {
+            let video = modal.querySelector('video');
+            if (video) video.play();
+        },
         onClose: modal => {
             let video = modal.querySelector('video');
             if (video) video.pause();

@@ -1830,6 +1830,7 @@ body.privacy {
     position: fixed;
     top: 32px;
     left: 32px;
+    z-index: 1;
 
     display: block;
 
