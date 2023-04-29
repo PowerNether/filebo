@@ -192,11 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!isScrolling) {
                     isScrolling = true;
     
-                    if (!window.requestAnimationFrame) {
-                        setTimeout(() => { checkPosition(imageCompareContainers) }, 100);
-                    } else {
-                        requestAnimationFrame(() => { checkPosition(imageCompareContainers) });
-                    }
+                    requestAnimationFrame(() => { checkPosition(imageCompareContainers) });
                 }
             }, 
             { passive: true }
@@ -206,12 +202,8 @@ document.addEventListener("DOMContentLoaded", function () {
             function () {
                 if (!isResizing) {
                     isResizing = true;
-    
-                    if (!window.requestAnimationFrame) {
-                        setTimeout(() => { checkLabel(imageCompareContainers) }, 100);
-                    } else {
-                        requestAnimationFrame(() => { checkLabel(imageCompareContainers) });
-                    }
+
+                    requestAnimationFrame(() => { checkLabel(imageCompareContainers) });
                 }
             },
             { passive: true }
@@ -286,39 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
             function handleMouseMove (event) {
                 if (isDragging) {
-                    if (!window.requestAnimationFrame) {
-                        setTimeout(function () {
-                            animateDraggedHandle(
-                                event,
-                                handle,
-                                handlePosition, 
-                                handleWidth, 
-                                minLeft, 
-                                maxLeft, 
-                                containerPosition, 
-                                containerWidth, 
-                                resizeImage, 
-                                labelOriginal, 
-                                labelModified
-                            );
-                        }, 100)
-                    } else {
-                        requestAnimationFrame(function () {
-                            animateDraggedHandle(
-                                event, 
-                                handle, 
-                                handlePosition, 
-                                handleWidth, 
-                                minLeft, 
-                                maxLeft, 
-                                containerPosition, 
-                                containerWidth, 
-                                resizeImage, 
-                                labelOriginal, 
-                                labelModified
-                            );
-                        });
-                    }
+                    animateDraggedHandle(event, handle, handlePosition, handleWidth, minLeft, maxLeft,containerPosition, containerWidth, resizeImage, labelOriginal, labelModified);
                 }
             }
 
@@ -360,9 +320,9 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if ( left > maxLeft) {
                 left = maxLeft;
             }
-    
+
             let width = (left + handleWidth / 2 - containerPosition) * 100 / containerWidth + '%';
-    
+
             handle.style.left = width;
             resizeImage.style.width = width;
     
