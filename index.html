@@ -8,18 +8,18 @@
     <title>FileBo: access and organize Recent Files on your Mac</title>
     <meta name="description" content="FileBo is a pop-up window that organizes and shows all the recent files you've created or downloaded on your Mac. No more searching, just finding!">
     <!-- SEO -->
-    <meta property="og:title" content="FileBo: access and organize Recent Files on your Mac" />
-    <meta property="og:description" content="FileBo is a pop-up window that organizes and shows all the recent files you've created or downloaded on your Mac. No more searching, just finding!" />
-    <meta property="og:image" content="./images/filebo-thumbnail.jpg" />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:type" content="website" />
+    <meta property="og:title" content="FileBo: access and organize Recent Files on your Mac">
+    <meta property="og:description" content="FileBo is a pop-up window that organizes and shows all the recent files you've created or downloaded on your Mac. No more searching, just finding!">
+    <meta property="og:image" content="./images/filebo-thumbnail.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="FileBo: access and organize Recent Files on your Mac" />
-    <meta name="twitter:description" content="FileBo is a pop-up window that organizes and shows all the recent files you've created or downloaded on your Mac. No more searching, just finding!" />
-    <meta name="twitter:image" content="./images/filebo-thumbnail.jpg" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FileBo: access and organize Recent Files on your Mac">
+    <meta name="twitter:description" content="FileBo is a pop-up window that organizes and shows all the recent files you've created or downloaded on your Mac. No more searching, just finding!">
+    <meta name="twitter:image" content="./images/filebo-thumbnail.jpg">
     <!-- Css -->
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/fonts.css">
@@ -29,13 +29,33 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
     <link rel="manifest" href="./site.webmanifest">
+    <!-- Animation Adaptive -->
+    <script src="./js/EQCSS.min.js"></script>
+    <style>
+        @element '[id*=_hype_container]' {
+            $this {
+                width: 100% !important;
+
+                max-width: eval("innerHeight * (style.width.split('px')[0]/style.height.split('px')[0])")px;
+
+                height: eval("offsetWidth / (style.width.split('px')[0]/style.height.split('px')[0])")px !important;
+            }
+
+            $this .HYPE_scene {
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translateX(-50%) translateY(-50%) scale(eval("offsetWidth / style.width.split('px')[0]"));
+            }
+        }
+    </style>
 </head>
 <body class="index">
     <header class="header">
         <div class="header__container">
             <div class="header__head">
                 <a href="/" class="header__logo">
-                    <img loading="lazy" class="header__logo__icon" src="./images/fFileBo.png" alt="FileBo" />
+                    <img loading="lazy" class="header__logo__icon" src="./images/fFileBo.png" alt="FileBo">
                     <span class="header__logo__title">FileBo</span>
                 </a>
                 <div class="header__toggler">
@@ -105,7 +125,7 @@
             
             <!-- #DELETE Потом можно будет удалить, после беты -->
             <a href="#beta" class="hello__link">
-                <img loading="lazy" src="./images/getapp.png" alt="get app" class="hello__getapp" width="194" height="48.5">
+                <img loading="lazy" src="./images/getapp.png" alt="get app" class="hello__getapp" width="194" height="48">
             </a>
             <!-- #END_DETELE -->
 
@@ -212,11 +232,11 @@
         </p>
         <div class="overview__fetures">
             <div class="overview__item">
-                <img loading="lazy" src="./images/f-hotkeys.png" alt="Hotkeys" class="overview__icon hotkeys" width="44" height="27.5">
+                <img loading="lazy" src="./images/f-hotkeys.png" alt="Hotkeys" class="overview__icon hotkeys" width="44" height="27">
                 <p class="overview__text">Control with <br> global hotkey</p>
             </div>
             <div class="overview__item">
-                <img loading="lazy" src="./images/f-multi-monitors.png" alt="Multi monitors" class="overview__icon multimonitors" width="60" height="37.5">
+                <img loading="lazy" src="./images/f-multi-monitors.png" alt="Multi monitors" class="overview__icon multimonitors" width="60" height="37">
                 <p class="overview__text">Works with <br> fullscreen apps</p>
             </div>
             <div class="overview__item">
@@ -250,7 +270,7 @@
         <div class="use__animation">
             <!-- Анимация Hotkeys -->
             <div id="hotkeys_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:568px;height:620px;overflow:hidden;">
-                <script type="text/javascript" charset="utf-8" src="./animations/Hotkeys/Hotkeys.hyperesources/hotkeys_hype_generated_script.js"></script>
+                <script src="./animations/Hotkeys/Hotkeys.hyperesources/hotkeys_hype_generated_script.js"></script>
             </div>
         </div>
     </section>
@@ -259,7 +279,7 @@
     <section class="container google">
         <p class="google__title">Track your Cloud documents</p>
         <h2 class="title">Works with <span>Google Docs</span></h2>
-        <img loading="lazy" src="./images/google-image.png" alt="interface google" class="google__image" width="1212" height="305.5">
+        <img loading="lazy" src="./images/google-image.png" alt="interface google" class="google__image" width="1212" height="305">
         <p class="text">
             FileBo can work with documents and spreadsheets from Google Docs. 
             When creating or modifying any documents, they will be displayed in the FileBo window. 
@@ -290,7 +310,7 @@
         <div class="ignore__animation">
             <!-- Анимация Ignore -->
             <div id="ignore_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:1210px;height:570px;overflow:hidden;">
-                <script type="text/javascript" charset="utf-8" src="./animations/Ignore/Ignore.hyperesources/ignore_hype_generated_script.js"></script>
+                <script src="./animations/Ignore/Ignore.hyperesources/ignore_hype_generated_script.js"></script>
             </div>
         </div>
         <p class="ignore__desc">
@@ -322,7 +342,7 @@
         <div class="preview__animation">
             <!-- Анимация Sorting -->
             <div id="sorting_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:1210px;height:547px;overflow:hidden;">
-                <script type="text/javascript" charset="utf-8" src="./animations/Sorting/Sorting.hyperesources/sorting_hype_generated_script.js"></script>
+                <script src="./animations/Sorting/Sorting.hyperesources/sorting_hype_generated_script.js"></script>
             </div>
         </div>
     </section>
@@ -343,7 +363,7 @@
         <div class="interface__animation">
             <!-- Анимация Favorites -->
             <div id="favorites_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:1210px;height:583px;overflow:hidden;">
-                <script type="text/javascript" charset="utf-8" src="./animations/Favorites/Favorites.hyperesources/favorites_hype_generated_script.js"></script>
+                <script src="./animations/Favorites/Favorites.hyperesources/favorites_hype_generated_script.js"></script>
             </div>
         </div>
         <p class="interface__desc">The Favorites panel can contain up to 10 links to your favorite files. You can sort them as you like by holding down the Alt key.</p>
@@ -364,7 +384,7 @@
         <div class="view__animation">
             <!-- Анимация View -->
             <div id="fcenew_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:1210px;height:560px;overflow:hidden;">
-                <script type="text/javascript" charset="utf-8" src="./animations/View/FCE%20New.hyperesources/fcenew_hype_generated_script.js?81071"></script>
+                <script src="./animations/View/FCE%20New.hyperesources/fcenew_hype_generated_script.js?81071"></script>
             </div>
         </div>
         <p class="view__desc">You can switch between these three modes using the keyboard shortcuts Cmd+1, 2, and 3, respectively.</p>
@@ -376,7 +396,7 @@
         <div class="videos__list">
             <div class="videos__item">
                 <div class="videos__video">
-                    <video alt="preview" class="videos__preview" preload="metadata" width="720" height="468">
+                    <video class="videos__preview" preload="metadata" width="720" height="468">
                         <source src="./videos/video.mp4#t=0.1" type="video/mp4"></source>
                     </video>
                     <img src="./images/Play.svg" alt="play" class="videos__play" width="128" height="128">
@@ -398,16 +418,16 @@
                     </p>
                 </div>
                 <div class="videos__video">
-                    <video alt="preview" class="videos__preview" preload="metadata" width="720" height="468">
-                        <source src="./videos/video.mp4#t=0.1" type="video/mp4"></source>
+                    <video class="videos__preview" preload="metadata" width="720" height="468">
+                        <source src="./videos/video.mp4#t=0.1" type="video/mp4">
                     </video>
                     <img src="./images/Play.svg" alt="play" class="videos__play" width="128" height="128">
                 </div>
             </div>
             <div class="videos__item">
                 <div class="videos__video">
-                    <video alt="preview" class="videos__preview" preload="metadata" width="720" height="468">
-                        <source src="./videos/video.mp4#t=0.1" type="video/mp4"></source>
+                    <video class="videos__preview" preload="metadata" width="720" height="468">
+                        <source src="./videos/video.mp4#t=0.1" type="video/mp4">
                     </video>
                     <img src="./images/Play.svg" alt="play" class="videos__play" width="128" height="128">
                 </div>
@@ -583,7 +603,7 @@
     </section>
 
     <!-- B12: Features -->
-    <section class="container fetures">
+    <div class="container fetures">
         <div class="block fetures__item">
             <div class="fetures__icons">
                 <img loading="lazy" src="./images/fFileBo.png" alt="FileBo" class="fetures__icon" width="110" height="110">
@@ -620,7 +640,7 @@
             <p class="fetures__title">Multilanguage <br> support</p>
             <p class="fetures__text">FileBo features full support for Apple's silicon chips enabling faster file indexing and searching.</p>
         </div>
-    </section>
+    </div>
 
     <!-- B13: FAQ -->
     <section class="container faq">
@@ -696,7 +716,7 @@
 
     <!-- B14: Team -->
     <section class="container block devolopers">
-        <p class="devolopers__type">The Team</div>
+        <p class="devolopers__type">The Team</p>
         <h2 class="title">Who Built <span>FileBo</span>?</h2>
         <p class="text">
             Snick pick inside FileBo icon. 
@@ -722,7 +742,7 @@
 
     <!-- B15: Wallpapers -->
     <section class="container wallpapers">
-        <p class="wallpapers__type">Wallpapers for iPhone</div>
+        <p class="wallpapers__type">Wallpapers for iPhone</p>
         <h2 class="title">Inspired by FileBo icon</h2>
         <p class="text">
             Like the FileBo icon? Here are four beautiful and free wallpapers for iPhone based on FileBo icon. 
@@ -740,7 +760,7 @@
     <!-- #DELETE Потом можно будет удалить, после беты -->
     <section id="beta" class="container beta">
         <img loading="lazy" src="./images/filebo.png" alt="FileBo Icon" class="beta__filebo" width="130" height="138">
-        <p class="title">FileBo Beta Program <span class="icon"></span></p>
+        <h2 class="title">FileBo Beta Program <span class="icon"></span></h2>
         <p class="beta__text">
             For now, FileBo is in beta. By using the beta and providing feedback, 
             you can help us to improve the app and make it available in the App Store as soon as possible. 
@@ -812,8 +832,8 @@
         <div class="modal__overlay" data-micromodal-close>
             <span class="modal__close" data-micromodal-close></span>
             <div class="modal__container">
-                <video alt="preview" class="modal__film__video" preload="metadata" controls>
-                    <source src="./videos/video.mp4#t=0.1" type="video/mp4"></source>
+                <video class="modal__film__video" preload="metadata" controls>
+                    <source src="./videos/video.mp4#t=0.1" type="video/mp4">
                 </video>
             </div>
         </div>
@@ -827,26 +847,6 @@
 
         gtag('config', 'G-2FY5VK8KWK');
     </script>
-
-    <script src="./js/EQCSS.min.js"></script>
-    <style>
-        @element '[id*=_hype_container]' {
-            $this {
-                width: 100% !important;
-
-                max-width: eval("innerHeight * (style.width.split('px')[0]/style.height.split('px')[0])")px;
-
-                height: eval("offsetWidth / (style.width.split('px')[0]/style.height.split('px')[0])")px !important;
-            }
-
-            $this .HYPE_scene {
-                position: absolute !important;
-                top: 50% !important;
-                left: 50% !important;
-                transform: translateX(-50%) translateY(-50%) scale(eval("offsetWidth / style.width.split('px')[0]"));
-            }
-        }
-    </style>
     <script src="./js/micromodal.min.js"></script>
     <script src="./js/scipt.js"></script>
 </body>
