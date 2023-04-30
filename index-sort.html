@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>FileBo: access and organize Recent Files on your Mac</title>
+    <meta name="description" content="FileBo is a pop-up window that organizes and shows all the recent files you've created or downloaded on your Mac. No more searching, just finding!">
+    <!-- SEO -->
+    <meta property="og:title" content="FileBo: access and organize Recent Files on your Mac">
+    <meta property="og:description" content="FileBo is a pop-up window that organizes and shows all the recent files you've created or downloaded on your Mac. No more searching, just finding!">
+    <meta property="og:image" content="./images/filebo-thumbnail.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <!-- SEO Social Sites -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FileBo: access and organize Recent Files on your Mac">
+    <meta name="twitter:description" content="FileBo is a pop-up window that organizes and shows all the recent files you've created or downloaded on your Mac. No more searching, just finding!">
+    <meta name="twitter:image" content="./images/filebo-thumbnail.jpg">
+    <!-- Css -->
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/fonts.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <!-- Animation Adaptive -->
+    <script src="./js/EQCSS.min.js"></script>
+    <style>
+        @element '[id*=_hype_container]' {
+            $this {
+                width: 100% !important;
+
+                max-width: eval("innerHeight * (style.width.split('px')[0]/style.height.split('px')[0])")px;
+
+                height: eval("offsetWidth / (style.width.split('px')[0]/style.height.split('px')[0])")px !important;
+            }
+
+            $this .HYPE_scene {
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translateX(-50%) translateY(-50%) scale(eval("offsetWidth / style.width.split('px')[0]"));
+            }
+        }
+    </style>
+    <!-- Preload -->
+    <link rel="preload" href="./fonts/sf-pro-display_light.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="./fonts/sf-pro-display_regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="./fonts/sf-pro-display_medium.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="./fonts/sf-pro-display_semibold.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="./fonts/sf-pro-display_bold.woff2" as="font" type="font/woff2" crossorigin="">
+</head>
+<body class="index">
+    <header class="header">
+        <div class="header__container">
+            <div class="header__head">
+                <a href="/" class="header__logo">
+                    <img loading="lazy" class="header__logo__icon" src="./images/fFileBo.png" alt="FileBo">
+                    <span class="header__logo__title">FileBo</span>
+                </a>
+                <div class="header__toggler">
+                    <span class="header__toggler__line"></span>
+                </div>
+            </div>
+            <div class="header__mobile">
+                <nav class="header__menu">
+                    <a href="#futures" class="hedear__link">Futures</a>
+                    <a href="#howto" class="hedear__link">How-to</a>
+                    <a href="#reviews" class="hedear__link">Reviews</a>
+                    <a href="#contact" class="hedear__link">Contact</a>
+                </nav>
+                <div class="header__download">
+
+                    <!-- #START_DELETE Потом можно будет удалить, после беты -->
+                    <a href="#beta" class="header__getapp">
+                        <img loading="lazy" src="./images/getapp.png" alt="Get app">
+                    </a>
+                    <!-- #END_DETELE -->
+
+                    <!-- #COMMET Версия для двух магазинов -->
+                    <!-- <a href="https://apps.apple.com/ua/app/keykey-typing-practice/id1035137927?mt=12" target="_blank" class="header__mas">
+                        <img loading="lazy" src="./images/mas.png" alt="Mac App Store">
+                    </a>
+                    <a href="http://setapp.sjv.io/c/123000/425212/5114" target="_blank" class="header__setapp">
+                        <img loading="lazy" src="./images/setapp.png" alt="SETAPP">
+                    </a> -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- B1: Hover -->
+    <section class="container hello">
+        <div class="hello__content">
+            <h2 class="title">
+                Access all <span>Recent Files</span> <br>
+                on your Mac like a Pro
+            </h2>
+            <p class="text">
+                How many times have you downloaded stuff from the internet, 
+                taken screenshots, or saved documents, only to struggle finding them among other files? 
+                FileBo is made to save you time, giving you quick access to all your recent files in one spot.
+            </p>
+            <div class="hello__overview">
+                <img src="./images/macbook-mask.png" alt="MacBook" class="hello__overview__mask" width="760" height="460">
+                <div class="hello__overview__container">
+                    <figure class="cd-image-container">
+                        <img src="./images/macbook-compare-1.png" alt="Finder" width="605" height="393">
+                        <span class="cd-image-label" data-type="original">FileBo</span>
+                       
+                        <div class="cd-resize-img">
+                            <img src="./images/macbook-compare-2.png" alt="FileBo" width="605" height="393">
+                            <span class="cd-image-label" data-type="modified">Finder</span>
+                        </div>
+                       
+                        <span class="cd-handle"></span>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="hello__download">
+            <img loading="lazy" src="./images/filebo.png" alt="filebo" class="hello__filebo" width="185" height="196">
+            <p class="hello__title">FileBo</p>
+            
+            <!-- #DELETE Потом можно будет удалить, после беты -->
+            <a href="#beta" class="hello__link">
+                <img loading="lazy" src="./images/getapp.png" alt="get app" class="hello__getapp" width="194" height="48">
+            </a>
+            <!-- #END_DETELE -->
+
+            <!-- #COMMET Версия для двух магазинов -->
+            <!-- 
+            <a href="https://apps.apple.com/ua/app/keykey-typing-practice/id1035137927?mt=12" target="_blank" class="hello__link">
+                <img loading="lazy" src="./images/mas.png" alt="Mac App Store" class="hello__mas">
+            </a>
+            <a href="http://setapp.sjv.io/c/123000/425212/5114" target="_blank" class="hello__link">
+                <img loading="lazy" src="./images/setapp.png" alt="SETAPP" class="hello__setapp">
+            </a>
+            <p class="hello__trial">7 days free trial</p> 
+            -->
+            <!-- #END_COMMET Версия для двух магазинов -->
+            <p class="hello__trial">Soon in the Mac App Store</p>
+        </div>
+    </section>
+
+    <!-- B2: Promo Video -->
+    <section class="container film">
+        <div class="film__content">
+            <h2 class="film__title">
+                Idea of FileBo <br>
+                in one minute
+            </h2>
+            <p class="film__text">
+                Vlad, one of the co-creators of FileBo, 
+                highlights the importance of managing 
+                Recent Files effectively to enhance 
+                productivity and save time.
+            </p>
+        </div>
+        <div class="film__video" data-micromodal-trigger="modal-film">
+            <p class="film__watch">Watch <br> Film</p>
+            <img loading="lazy" src="./images/TemplateVideo.png" alt="preview" class="film__preview" width="640" height="360">
+            <img loading="lazy" src="./images/Play.svg" alt="play" class="film__play" width="136" height="136">
+        </div>
+    </section>
+
+    <!-- B3: General View-->
+    <section class="container overview" id="futures">
+        <h2 class="title">
+            <span>No more searching</span>, <br>
+            just finding!
+        </h2>
+        <div class="overview__content">
+            <div class="overview__block overview__block__1">
+                <p class="overview__block__title"><span class="icon"></span> List of Recent Files</p>
+                <p class="overview__block__text">
+                    This is the main panel where FileBo displays all 
+                    your recently created, downloaded, or modified files.
+                </p>
+            </div>
+            <div class="overview__block overview__block__2">
+                <p class="overview__block__title"><span class="icon"></span> Sort Your Recents by file type</p>
+                <p class="overview__block__text">
+                    To make navigation easier when dealing with a 
+                    large number of incoming files, you can sort them by file type. 
+                </p>
+            </div>
+            <div class="overview__block overview__block__3">
+                <p class="overview__block__title"><span class="icon"></span> Three view modes</p>
+                <p class="overview__block__text">
+                    Control how many recent files you want to see in the main windows. 
+                </p>
+            </div>
+            <div class="overview__block overview__block__4">
+                <p class="overview__block__title"><span class="icon"></span> List of Favorite Files</p>
+                <p class="overview__block__text">
+                    Add your frequently accessed files to the Favorites panel 
+                    for quick and easy access, without having to search 
+                    through multiple folders or applications.
+                </p>
+            </div>
+            <div class="overview__block overview__block__5">
+                <p class="overview__block__title"><span class="icon"></span> Full File Path</p>
+                <p class="overview__block__text">
+                    Knowing the file path and file size can help you 
+                    identify the selected file even if its name is unclear.
+                </p>
+            </div>
+            <img loading="lazy" src="./images/overview.png" alt="overview" class="overview__image" width="1210" height="487">
+        </div>
+        <p class="text">
+            Picture this: you get a file through Airdrop. 
+            Where did your Mac save it? You recorded a Zoom meeting. 
+            Where's the video file? You took a screenshot a few minutes ago. 
+            How do you find it among all the other files?
+        </p>
+        <p class="text">
+            Every day, our computers are packed with tons of files we need at different times. 
+            Some we make ourselves, while others come from 
+            the internet or are sent through chat apps and social media.
+        </p>
+        <p class="text">
+            When it's time to use a specific file, 
+            we've got to remember where we saved it and what it's called. 
+            It could be on the desktop, in the Downloads folder, or even Dropbox. It is hard. 
+        </p>
+        <p class="text">
+            That's why we made FileBo – to save you from the headache of searching 
+            for these files. FileBo is a pop-up window that shows all the recent 
+            files you've created or changed on your Mac. No more searching, just finding!
+        </p>
+        <div class="overview__fetures">
+            <div class="overview__item">
+                <img loading="lazy" src="./images/f-hotkeys.png" alt="Hotkeys" class="overview__icon hotkeys" width="44" height="27">
+                <p class="overview__text">Control with <br> global hotkey</p>
+            </div>
+            <div class="overview__item">
+                <img loading="lazy" src="./images/f-multi-monitors.png" alt="Multi monitors" class="overview__icon multimonitors" width="60" height="37">
+                <p class="overview__text">Works with <br> fullscreen apps</p>
+            </div>
+            <div class="overview__item">
+                <img loading="lazy" src="./images/f-fullscreen-apps.png" alt="fullscreen" class="overview__icon fullscreen" width="48" height="37">
+                <p class="overview__text">Works with <br> fullscreen apps</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- B4: Hotkey -->
+    <section class="container block use" id="howto">
+        <div class="use__content">
+            <p class="use__type">Instant access to Recent Files</p>
+            <h2 class="title">Open with a <span>hotkey</span>, <br> <span>menubar</span> or <span>Dock icon</span></h2>
+            <div class="use__command">
+                <img loading="lazy" src="./images/useKeys.png" alt="keys" class="use__icon" width="376" height="106">
+                <p class="use__text">Press shortcut to see your <br> Recent Files</p>
+            </div>
+            <p class="use__text">
+                We made FileBo simple and user-friendly. 
+                You can get to your recent files from any app and screen, 
+                even in full-screen mode. Just press a hotkey or click the Dock or menubar icon. 
+                Pick the option that works best for you.
+            </p>
+            <p class="use__text">
+                There's no setup needed. 
+                Hit a hotkey and see your Mac's 
+                recent files right away. It's that simple.
+            </p>
+        </div>
+        <div class="use__animation">
+            <!-- Анимация Hotkeys -->
+            <div id="hotkeys_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:568px;height:620px;overflow:hidden;">
+                <script src="./animations/Hotkeys/Hotkeys.hyperesources/hotkeys_hype_generated_script.js"></script>
+            </div>
+        </div>
+    </section>
+
+    <!-- B5: Google Docs -->
+    <section class="container google">
+        <p class="google__title">Track your Cloud documents</p>
+        <h2 class="title">Works with <span>Google Docs</span></h2>
+        <img loading="lazy" src="./images/google-image.png" alt="interface google" class="google__image" width="1212" height="305">
+        <p class="text">
+            FileBo can work with documents and spreadsheets from Google Docs. 
+            When creating or modifying any documents, they will be displayed in the FileBo window. 
+            This is very convenient, as you don't have to search for the file in the browser.
+        </p>
+        <p class="text text__italic">
+            * To allow FileBo to access your Google Docs, 
+            the Google Drive application must be installed on your Mac. 
+            Please note that the "Mirror files" option in the application settings 
+            must be enabled for proper file synchronization.
+        </p>
+        <div class="google__icons">
+            <img loading="lazy" src="./images/gdocs.png" alt="Google Docs" class="google__icon" width="64" height="64">
+            <img loading="lazy" src="./images/gsheets.png" alt="Google Sheets" class="google__icon" width="64" height="64">
+            <img loading="lazy" src="./images/gslides.png" alt="Google Slides" class="google__icon" width="64" height="64">
+        </div>
+    </section>
+
+    <!-- B6: Ignore -->
+    <section class="container ignore">
+        <p class="ignore__title">Hide all junk</p>
+        <h2 class="title"><span>Ignore</span> whats not important</h2>
+        <p class="text">
+            Sometimes you work with files that you don't want to appear in the recent files list. 
+            In this case, you can hide them. 
+            The Ignore List helps you customize FileBo to display only what you really need and ignore everything else.
+        </p>
+        <div class="ignore__animation">
+            <!-- Анимация Ignore -->
+            <div id="ignore_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:1210px;height:570px;overflow:hidden;">
+                <script src="./animations/Ignore/Ignore.hyperesources/ignore_hype_generated_script.js"></script>
+            </div>
+        </div>
+        <p class="ignore__desc">
+            You can remove entire folders from your Recent Files list, 
+            as well as specific files or all files with a certain extension. 
+            You can also group recent files into a parent folder so that they don't take up space in the list. 
+        </p>
+    </section>
+    
+    <!-- B8: Favorites -->
+    <section class="container interface">
+        <p class="interface__title">Keep the good stuff </p>
+        <h2 class="title">See <span>all favorite</span> <br> files in one click</h2>
+        <p class="text">
+            Each of us has files that we open more often than others. 
+            These may include folders with projects, specific applications, or documents.
+        </p>
+        <p class="text">
+            FileBо offers the ability to show such files in a dedicated "Favorites" panel. 
+            Regardless of the application you're using, you can always access these 
+            files without having to go through the Finder.
+        </p>
+        <div class="interface__animation">
+            <!-- Анимация Favorites -->
+            <div id="favorites_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:1210px;height:583px;overflow:hidden;">
+                <script src="./animations/Favorites/Favorites.hyperesources/favorites_hype_generated_script.js"></script>
+            </div>
+        </div>
+        <p class="interface__desc">The Favorites panel can contain up to 10 links to your favorite files. You can sort them as you like by holding down the Alt key.</p>
+    </section>
+
+    <!-- B9: View -->
+    <section class="container view">
+        <p class="view__title">Favorites, Compact or Extended</p>
+        <h2 class="title">
+            Choose the view <br> 
+            <span>that works</span> for you
+        </h2>
+        <p class="text">
+            FileBo has three display modes. The first one shows recent files and the Favorites panel. 
+            The second one displays only recent files in a compact view. 
+            The third one is an expanded view that can show more files.
+        </p>
+        <div class="view__animation">
+            <!-- Анимация View -->
+            <div id="fcenew_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:1210px;height:560px;overflow:hidden;">
+                <script src="./animations/View/FCE%20New.hyperesources/fcenew_hype_generated_script.js?81071"></script>
+            </div>
+        </div>
+        <p class="view__desc">You can switch between these three modes using the keyboard shortcuts Cmd+1, 2, and 3, respectively.</p>
+    </section>
+
+    <!-- B10: Video -->
+    <section class="container videos">
+        <h2 class="title">Find out how FileBo <br> will save your time</h2>
+        <div class="videos__list">
+            <div class="videos__item">
+                <div class="videos__video">
+                    <video class="videos__preview" preload="metadata" width="720" height="468">
+                        <source src="./videos/video.mp4#t=0.1" type="video/mp4">
+                    </video>
+                    <img src="./images/Play.svg" alt="play" class="videos__play" width="128" height="128">
+                </div>
+                <div class="videos__content ml-24">
+                    <p class="videos__title">Downloads</p>
+                    <p class="videos__text">
+                        Easily locate any files you download from the internet or 
+                        receive through messengers or AirDrop. All files are sorted by time and type.
+                    </p>
+                </div>
+            </div>
+            <div class="videos__item videos__item__right">
+                <div class="videos__content mr-24">
+                    <p class="videos__title">Documents</p>
+                    <p class="videos__text">
+                        Don't waste time searching for screenshots, exported photos, ZOOM-recordings, 
+                        and other documents. FileBo conveniently displays all recent files in one place for easy access.
+                    </p>
+                </div>
+                <div class="videos__video">
+                    <video class="videos__preview" preload="metadata" width="720" height="468">
+                        <source src="./videos/video.mp4#t=0.1" type="video/mp4">
+                    </video>
+                    <img src="./images/Play.svg" alt="play" class="videos__play" width="128" height="128">
+                </div>
+            </div>
+            <div class="videos__item">
+                <div class="videos__video">
+                    <video class="videos__preview" preload="metadata" width="720" height="468">
+                        <source src="./videos/video.mp4#t=0.1" type="video/mp4">
+                    </video>
+                    <img src="./images/Play.svg" alt="play" class="videos__play" width="128" height="128">
+                </div>
+                <div class="videos__content ml-24">
+                    <p class="videos__title">Favorite Items</p>
+                    <p class="videos__text">
+                        Add your most commonly used files and folders to the 
+                        Favorites panel for easy access from any application.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B11:  -->
+    <section class="container reviews" id="reviews">
+        <h2 class="title">Users ❤️ FileBo</h2>
+        <div class="reviews__item reviews__item__small">
+            <div class="reviews__content">
+                <p class="reviews__text">
+                    I often download or save files and have a hard time remembering where I put them. 
+                    FileBo is a useful tool that helps me keep track of these files. 
+                    It has earned a spot in my Menubar, because it saves me a lot of time.
+                </p>
+                <p class="reviews__author">Dominik</p>
+                <p class="reviews__appstore">
+                    App Store Germany
+                    <span>★★★★★</span>
+                </p>
+            </div>
+            <div class="reviews__background"></div>
+        </div>
+        <div class="reviews__item reviews__item__small">
+            <div class="reviews__content">
+                <p class="reviews__text">
+                    I first got FileBo set up for my parents to make it easy for them to find their new files. 
+                    I put the FileBo icon right next to the Finder icon, and they caught on real fast.
+                </p>
+                <p class="reviews__text">
+                    Funny thing is, I started using it myself after a while: 
+                    FileBo lets me get to the files I need while I'm in full-screen apps. 
+                    No more bouncing between screens or opening Finder just to dig up a file I downloaded. Super easy and convenient!
+                </p>
+                <p class="reviews__author">Vito2befree</p>
+                <p class="reviews__appstore">
+                    App Store Switzerland
+                    <span>★★★★★</span>
+                </p>
+            </div>
+            <div class="reviews__background"></div>
+        </div>
+        <div class="reviews__item reviews__item__small">
+            <div class="reviews__content">
+                <p class="reviews__text">
+                    As student, I constantly find myself downloading tons of documents and files every day. 
+                    Sadly, my professors don't seem to care about organizing these files, 
+                    as they often have random names or just numbers, and the metadata is missing. 
+                    This makes finding the right file super annoying.
+                </p>
+                <p class="reviews__text">
+                    But with FileBo, my life has become so much easier! 
+                    Now I can make sense of the mess of files on my Mac by quickly checking the date and location of each one. 
+                    Plus, the Quick View feature lets me peek into the file to see what's inside, 
+                    so I can figure out what kind of document it is. 
+                    Once I know which file I'm dealing with, I can give it a proper name and put it in the right folder.
+                </p>
+                <p class="reviews__author">jamesngregson</p>
+                <p class="reviews__appstore">
+                    App Store South A.
+                    <span>★★★★★</span>
+                </p>
+            </div>
+            <div class="reviews__background"></div>
+        </div>
+        <div class="reviews__item reviews__item__small">
+            <div class="reviews__content">
+                <p class="reviews__text">
+                    I prefer to use full-screen applications to maximize the available screen space. 
+                    But, as you might know, dragging files to and from Finder into full-screen apps can be a pain.
+                </p>
+                <p class="reviews__text">
+                    FileBo makes it easier. Its window is available even when I'm in full-screen apps. 
+                    This means I can quickly pick the file I need and drag and drop it into my current app without flipping through multiple screens. 
+                    It's a simple and effective solution for my problem.
+                </p>
+                <p class="reviews__author">Vito2befree</p>
+                <p class="reviews__appstore">
+                    App Store Switzerland
+                    <span>★★★★★</span>
+                </p>
+            </div>
+            <div class="reviews__background"></div>
+        </div>
+        <div class="reviews__item reviews__item__big">
+            <div class="reviews__content">
+                <p class="reviews__text">
+                    I often export resources from Sketch to share with colleagues via messenger apps.
+                    Typically, I save these files to my Desktop and then drag them into the messenger. 
+                    However, my Desktop can become quite cluttered, making it difficult to locate the files I recently saved there.
+                </p>
+                <p class="reviews__text">
+                    FileBo has entirely resolved this issue: all recent files, complete with nice-lookin' previews, 
+                    are readily accessible with a single click, regardless of their location. 
+                    Now, I simply open my messenger app and drag a file directly from the FileBo window. 
+                    It's incredibly efficient. Easy as pie!
+                </p>
+                <p class="reviews__author">Targetindicator</p>
+                <p class="reviews__appstore">
+                    App Store USA 
+                    <span>★★★★★</span>
+                </p>
+            </div>
+            <div class="reviews__background"></div>
+        </div>
+        <div class="reviews__list">
+            <div class="reviews__item reviews__item__small">
+                <div class="reviews__content">
+                    <p class="reviews__text">
+                        I've been trying to use the Recents feature in Finder for some time, but it only shows a few of my recent files. 
+                        I also gave Smart Folders a shot, but it was just too complex. Thankfully, 
+                        FileBo's like a way better version of Smart Folders, without needing any setup. This app is good to go right off the bat.
+                    </p>
+                    <p class="reviews__author">Zed Hicks</p>
+                    <p class="reviews__appstore">
+                        App Store Canada
+                        <span>★★★★★</span>
+                    </p>
+                </div>
+                <div class="reviews__background"></div>
+            </div>
+            <div class="reviews__item reviews__item__small">
+                <div class="reviews__content">
+                    <p class="reviews__text">
+                        With FileBo, I can see all my recent files in an easy-to-use pop-up window. 
+                        I can drag and drop these files to other apps quickly and easily. 
+                        Also, I can pin often-used files to the bottom bar for fast access.
+                    </p>
+                    <p class="reviews__text">
+                        Even though the app's idea is simple, it's made a big difference in how 
+                        I handle new files on my Mac.
+                    </p>
+                    <p class="reviews__author">Zed Hicks</p>
+                    <p class="reviews__appstore">
+                        App Store Canada
+                        <span>★★★★★</span>
+                    </p>
+                </div>
+                <div class="reviews__background"></div>
+            </div>
+            <div class="reviews__item reviews__item__big">
+                <div class="reviews__content">
+                    <p class="reviews__text">
+                        I am an SMM specialist, and my job includes posting content on various social media platforms. 
+                        But managing the tons of incoming files from clients and designers every day, like photos, 
+                        screenshots, and illustrations, can be a real struggle. Sometimes, 
+                        I have a hard time finding new files among the rest.
+                    </p>
+                    <p class="reviews__text">
+                        Thankfully, FileBo has made my life easier by sorting all the new images based on when they showed up on my Mac. 
+                        This way, I can quickly find all the new files by day, no matter where they're saved. 
+                        Plus, I've added my project folders to FileBo's favorite panel, which I find way more user-friendly than the Finder sidebar.
+                    </p>
+                    <p class="reviews__author">Targetindicator</p>
+                    <p class="reviews__appstore">
+                        App Store USA
+                        <span>★★★★★</span>
+                    </p>
+                </div>
+                <div class="reviews__background"></div>
+            </div>
+        </div>
+        <p class="reviews__toggler">Show more reviews</p>
+    </section>
+
+    <!-- B12: Features -->
+    <div class="container fetures">
+        <div class="block fetures__item">
+            <div class="fetures__icons">
+                <img loading="lazy" src="./images/fFileBo.png" alt="FileBo" class="fetures__icon" width="110" height="110">
+                <img loading="lazy" src="./images/fVentura.png" alt="MacOs Ventura" class="fetures__icon" width="110" height="110">
+            </div>
+            <p class="fetures__title">FileBo is macOS <br> Ventura ready</p>
+            <p class="fetures__text">FileBo features full support for Apple's silicon chips enabling faster file indexing and searching.</p>
+        </div>
+        <div class="block fetures__item">
+            <div class="fetures__icons">
+                <img loading="lazy" src="./images/fM2.png" alt="Apple M2" class="fetures__icon" width="110" height="110">
+            </div>
+            <p class="fetures__title">Apple M2 & M1 <br> Silicon Support</p>
+            <p class="fetures__text">FileBo features full support for Apple's silicon chips enabling faster file indexing and searching.</p>
+        </div>
+        <div class="block fetures__item">
+            <div class="fetures__icons">
+                <img loading="lazy" src="./images/fAccessibility.png" alt="Accessibility" class="fetures__icon" width="110" height="110">
+            </div>
+            <p class="fetures__title">Accessibility <br> optimization</p>
+            <p class="fetures__text">FileBo features full support for Apple's silicon chips enabling faster file indexing and searching.</p>
+        </div>
+        <div class="block fetures__item">
+            <div class="fetures__icons">
+                <img loading="lazy" src="./images/fFingerPrint.png" alt="FingerPrint" class="fetures__icon" width="110" height="110">
+            </div>
+            <p class="fetures__title">Full privacy <br> and honesy</p>
+            <p class="fetures__text">NeoFile X features full support for Apple's silicon chips enabling faster file indexing and searching.</p>
+        </div>
+        <div class="block fetures__item">
+            <div class="fetures__icons">
+                <img loading="lazy" src="./images/multilanguage.png" alt="FingerPrint" class="fetures__icon" width="110" height="110">
+            </div>
+            <p class="fetures__title">Multilanguage <br> support</p>
+            <p class="fetures__text">FileBo features full support for Apple's silicon chips enabling faster file indexing and searching.</p>
+        </div>
+    </div>
+
+    <!-- B13: FAQ -->
+    <section class="container faq">
+        <h2 class="title">
+            Common <br> questions
+        </h2>
+        <div class="faq__list">
+            <div class="faq__item">
+                <p class="faq__title">Can I use FileBo on all my Macs?</p>
+                <p class="faq__text">
+                    You can use FileBo on all of your comuters that are connected to the same Apple ID. 
+                    If you have enabled Family Sharing, then all members of your family can also access and use FileBo on their own Macs.
+                </p>
+            </div>
+            <div class="faq__item">
+                <p class="faq__title">Can I try FileBo before buying?</p>
+                <p class="faq__text">
+                    Yes, you can try FileBo for free up for 7 days when you subscribe. 
+                    If you find that the app doesn't meet your needs, you can cancel the subscription within the first 7 days at no cost. 
+                    You can also try FileBo in Setapp with the same conditions.
+                </p>
+            </div>
+            <div class="faq__item">
+                <p class="faq__title">Can I buy instead of subscribing?</p>
+                <p class="faq__text">
+                    We offer a subscription model to make FileBo more budget-friendly, 
+                    but you also have the option to purchase it at a fixed price and use it as long as you want with live-time support and updates. 
+                    To access this option, simply click on "More purchase options" in the FileBo Purchase window.
+                </p>
+            </div>
+            <div class="faq__item">
+                <p class="faq__title">Can FileBo work with external drives?</p>
+                <p class="faq__text">
+                    Currently, FileBo is only compatible with the internal storage of Mac. 
+                    However, we have plans to include support for external disks, flash drives, and memory cards in the near future.
+                </p>
+            </div>
+            <div class="faq__sublist">
+                <div class="faq__item">
+                    <p class="faq__title">
+                        What macOS are supported?
+                    </p>
+                    <p class="faq__text">
+                        FileBo relies on a variety of advanced technologies and 
+                        APIs to deliver top-notch performance and seamless visuals. 
+                        As a result, FileBo is compatible only with macOS 12 Monterey, macOS 13 Ventura, and newer.
+                    </p>
+                </div>
+                <div class="faq__item">
+                    <p class="faq__title">What is FileBo's privacy policy?</p>
+                    <p class="faq__text">
+                        FileBo does not collect any personal data. 
+                        The app utilizes only the built-in features of macOS to locate and display your files in user-friendly way. 
+                        All files are processed on your Mac locally.
+                    </p>
+                </div>
+                <div class="faq__item">
+                    <p class="faq__title">Can FileBo show my Google Docs?</p>
+                    <p class="faq__text">
+                        Yes, it can! You should install the <a class="faq__link" target="_blank" href="#">Google Drive app</a> to see all your cloud files and documents. 
+                        Ensure that the syncing option in the app settings  is set to "Mirror files." 
+                    </p>
+                    <p class="faq__text">
+                        FileBo will show all documents that you created. 
+                        If you want to see documents shared with you by others, 
+                        make sure you <a class="faq__link" target="_blank" href="#">add a shortcut</a> of this file to your Google Drive. 
+                    </p>
+                </div>
+            </div>
+            <p class="faq__toggler">Show more</p>
+        </div>
+    </section>
+
+    <!-- B14: Team -->
+    <section class="container block devolopers">
+        <p class="devolopers__type">The Team</p>
+        <h2 class="title">Who Built <span>FileBo</span>?</h2>
+        <p class="text">
+            Snick pick inside FileBo icon. 
+            How often do you download something form the internet, make screenshot, 
+            export picture or document and then struggle to find it among other files? 
+            FilePal crafted to save your time and give you a fast access to those files. 
+        </p>
+        <div class="devolopers__list">
+            <div class="devolopers__item z-i-3">
+                <img loading="lazy" src="./images/Vlad.png" alt="Vlad" class="devolopers__image" width="184" height="184">
+                <p class="devolopers__name">Vlad</p>
+            </div>
+            <div class="devolopers__item z-i-1">
+                <img loading="lazy" src="./images/Andrii.png" alt="Andrii" class="devolopers__image" width="184" height="184">
+                <p class="devolopers__name">Andrii</p>
+            </div>
+            <div class="devolopers__item z-i-2">
+                <img loading="lazy" src="./images/Masha.png" alt="Masha" class="devolopers__image" width="184" height="184">
+                <p class="devolopers__name">Masha</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- B15: Wallpapers -->
+    <section class="container wallpapers">
+        <p class="wallpapers__type">Wallpapers for iPhone</p>
+        <h2 class="title">Inspired by FileBo icon</h2>
+        <p class="text">
+            Like the FileBo icon? Here are four beautiful and free wallpapers for iPhone based on FileBo icon. 
+        </p>
+        <div class="wallpapers__list">
+            <img loading="lazy" src="./images/wallpaper-1.png" alt="wallpaper1" class="wallpapers__item" width="190" height="384">
+            <img loading="lazy" src="./images/wallpaper-2.png" alt="wallpaper2" class="wallpapers__item" width="190" height="384">
+            <img loading="lazy" src="./images/wallpaper-3.png" alt="wallpaper3" class="wallpapers__item" width="190" height="384">
+            <img loading="lazy" src="./images/wallpaper-4.png" alt="wallpaper4" class="wallpapers__item" width="190" height="384">
+        </div>
+        <a href="./downloads/FileBo-wallpapers.zip" download class="wallpapers__download">Download wallpapers</a>
+    </section>
+
+    <!-- B16: Beta -->
+    <!-- #DELETE Потом можно будет удалить, после беты -->
+    <section id="beta" class="container beta">
+        <img loading="lazy" src="./images/filebo.png" alt="FileBo Icon" class="beta__filebo" width="130" height="138">
+        <h2 class="title">FileBo Beta Program <span class="icon"></span></h2>
+        <p class="beta__text">
+            For now, FileBo is in beta. By using the beta and providing feedback, 
+            you can help us to improve the app and make it available in the App Store as soon as possible. 
+        </p>
+        <p class="beta__text">
+            This version is not thoroughly tested, and bugs are what this is all about. Some of the futures are under development.
+        </p>
+        <p class="beta__subtitle">Sending Feedback</p>
+        <p class="beta__text">
+            If you encounter any issues or have feedback to share, 
+            please let us know through the TestFlight app. 
+            We value your feedback, and the beta stage is the perfect opportunity for us to refine the app.
+        </p>
+        <p class="beta__subtitle">Get FileBo Beta in Apple TestFlight <span class="icon"></span></p>
+        <p class="beta__text">
+            To get the FileBo Beta version, simply enter your email below, 
+            and we will send you a download link along with instructions 
+            on how to use the Apple TestFlight for beta software.
+        </p>
+        <form class="beta__field" action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4Mjk2MTE4LCJhZGRyZXNzX2Jvb2tfaWQiOjE2NDg5OCwibGFuZyI6InVhIn0=" method="post">
+            <input type="text" required name="email" placeholder="your@email.com" class="beta__input">
+            <input type="hidden" name="sender" value="vlad@keykey.ninja">
+            <button class="beta__btn">Get <span>FileBo</span> Beta</button>
+        </form>
+        <!-- SendPulse Simple Subscription Form -->
+        <!-- <form action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4Mjk2MTE4LCJhZGRyZXNzX2Jvb2tfaWQiOjE2NDg5OCwibGFuZyI6InVhIn0=" method="post" class="beta__send__form">
+            <label>Ім´я</label>
+            <input type="text" name="name">
+            <label>Email</label>
+            <input type="email" required name="email">
+            <input type="hidden" name="sender" value="vlad@keykey.ninja">
+            <button>Subscribe</button>
+        </form> -->
+        <!-- SendPulse Simple Subscription Form -->
+    </section>
+    <!-- #END_DETELE -->
+    <!-- #COMMET Версия для подписки на рассылку -->
+    <!-- <section class="newsletter block container">
+        <p class="newsletter__title">FileBo Newsletter</div>
+        <p class="newsletter__text">Subscribe for updates on products, announcements, and a look behind the scenes. No more than one mail per month.</p>
+        <form class="newsletter__field">
+            <input type="text" placeholder="your@email.com" class="newsletter__input">
+            <button class="newsletter__btn">Subscribe</button>
+        </form>
+    </section> -->
+    <!-- #END_COMMET Версия для подписки на рассылку -->
+     
+    <!-- B17: Footer -->
+    <footer class="footer container" id="contact">
+        <div class="footer__column">
+            <p class="footer__title">Contacts</p>
+            <a href="#" class="footer__link">Email</a>
+            <a href="#" class="footer__link">Twitter</a>
+            <a href="#" class="footer__link">Telegram</a>
+        </div>
+        <div class="footer__column">
+            <p class="footer__title">Policy</p>
+            <a href="./privacy-policy.html" target="_blank" class="footer__link">Privacy Policy</a>
+        </div>
+        <div class="footer__column ml-a">
+            <p class="footer__title">Press Kit</p>
+            <a href="#" class="footer__link">FileBo for Mac</a>
+            <p class="footer__copyright mt-a">@ FileBo, 2023</p>
+        </div>
+    </footer>
+    
+    
+    <div class="modal micromodal-slide" id="modal-film" aria-hidden="true">
+        <div class="modal__overlay" data-micromodal-close>
+            <span class="modal__close" data-micromodal-close></span>
+            <div class="modal__container">
+                <video class="modal__film__video" preload="metadata" controls>
+                    <source src="./videos/video.mp4#t=0.1" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+    <!-- Google -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FY5VK8KWK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-2FY5VK8KWK');
+    </script>
+    <script src="./js/micromodal.min.js"></script>
+    <script src="./js/scipt.js"></script>
+</body>
+</html>

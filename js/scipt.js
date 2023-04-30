@@ -275,16 +275,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
             handle.addEventListener('mouseup', handleMouseUp);
             handle.addEventListener('touchend', handleMouseUp);
-    
+
             function handleMouseMove (event) {
                 if (isDragging) {
-                    animateDraggedHandle(event, handle, handlePosition, handleWidth, minLeft, maxLeft,containerPosition, containerWidth, resizeImage, labelOriginal, labelModified);
+                    requestAnimationFrame(() => {
+                        animateDraggedHandle(event, handle, handlePosition, handleWidth, minLeft, maxLeft,containerPosition, containerWidth, resizeImage, labelOriginal, labelModified)
+                    })
                 }
             }
 
             handle.parentNode.addEventListener('mousemove', handleMouseMove, { passive: true })
             handle.parentNode.addEventListener('touchmove', handleMouseMove, { passive: true })
-            
+
             function documentMouseUp () {
                 handle.classList.remove('draggable');
                 resizeImage.classList.remove('resizable');
@@ -311,6 +313,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
+
+        function lerp(start, end, amt) {
+            return (1 - amt) * start + amt * end
+        };
     
         function animateDraggedHandle (event, handle, handlePosition, handleWidth, minLeft, maxLeft, containerPosition, containerWidth, resizeImage, labelOriginal, labelModified) {
             let left = event.pageX + handlePosition - handleWidth;
