@@ -832,6 +832,9 @@ body.privacy {
     line-height: clamp(2rem, 1.4549rem + 2.2951vw, 3.75rem);
     text-align: center;
 }
+.preview .title br {
+    display: none;
+}
 .preview .title span {
     color: #FFCA80;
 }
@@ -933,6 +936,9 @@ body.privacy {
     font-size: clamp(1.75rem, 1.3799rem + 1.5584vw, 3.25rem);
     line-height: clamp(2rem, 1.4549rem + 2.2951vw, 3.75rem);
     text-align: center;
+}
+.view .title br {
+    display: none;
 }
 .view .title span {
     color: #FFCA80;
