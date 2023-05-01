@@ -1832,6 +1832,7 @@ body.privacy {
     position: fixed;
     top: 32px;
     left: 32px;
+    z-index: 1;
 
     display: block;
 
@@ -1928,7 +1929,7 @@ body.privacy {
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-
+    will-change: width;
     border-right: 2px solid #000000;
 }
 .cd-resize-img img {
@@ -1999,6 +2000,7 @@ body.privacy {
     cursor: move;
     box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     opacity: 0;
+    will-change: left;
     -webkit-transform: translate3d(0, 0, 0) scale(0);
     -moz-transform: translate3d(0, 0, 0) scale(0);
     -ms-transform: translate3d(0, 0, 0) scale(0);

@@ -5,8 +5,7 @@
     src:
         local('☺'),
         url("../fonts/sf-pro-display_light.woff2") format("woff2"),
-        url("../fonts/sf-pro-display_light.woff") format("woff"),
-        url("../fonts/sf-pro-display_light.ttf") format("truetype");
+        url("../fonts/sf-pro-display_light.woff") format("woff");
     font-display: swap;
 }
 @font-face {
@@ -16,8 +15,7 @@
     src:
         local('☺'),
         url("../fonts/sf-pro-display_regular.woff2") format("woff2"),
-        url("../fonts/sf-pro-display_regular.woff") format("woff"),
-        url("../fonts/sf-pro-display_regular.ttf") format("truetype");
+        url("../fonts/sf-pro-display_regular.woff") format("woff");
     font-display: swap;
 }
 @font-face {
@@ -27,8 +25,7 @@
     src: 
         local('☺︎'), 
         url("../fonts/sf-pro-display_medium.woff2") format("woff2"),
-        url("../fonts/sf-pro-display_medium.woff") format("woff"),
-        url("../fonts/sf-pro-display_medium.ttf") format("truetype");
+        url("../fonts/sf-pro-display_medium.woff") format("woff");
     font-display: swap;
 }
 @font-face {
@@ -38,8 +35,7 @@
     src: 
         local('☺︎'), 
         url("../fonts/sf-pro-display_semibold.woff2") format("woff2"),
-        url("../fonts/sf-pro-display_semibold.woff") format("woff"),
-        url("../fonts/sf-pro-display_semibold.ttf") format("truetype");
+        url("../fonts/sf-pro-display_semibold.woff") format("woff");
     font-display: swap;
 }
 @font-face {
@@ -49,7 +45,6 @@
     src: 
         local('☺︎'), 
         url("../fonts/sf-pro-display_bold.woff2") format("woff2"),
-        url("../fonts/sf-pro-display_bold.woff") format("woff"),
-        url("../fonts/sf-pro-display_bold.ttf") format("truetype");
+        url("../fonts/sf-pro-display_bold.woff") format("woff");
     font-display: swap;
 }

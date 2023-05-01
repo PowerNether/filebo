@@ -84,6 +84,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Modal Window
     MicroModal.init({
         disableScroll: true,
+        onShow: modal => {
+            let video = modal.querySelector('video');
+            if (video) video.play();
+        },
         onClose: modal => {
             let video = modal.querySelector('video');
             if (video) video.pause();
@@ -188,11 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!isScrolling) {
                     isScrolling = true;
     
-                    if (!window.requestAnimationFrame) {
-                        setTimeout(() => { checkPosition(imageCompareContainers) }, 100);
-                    } else {
-                        requestAnimationFrame(() => { checkPosition(imageCompareContainers) });
-                    }
+                    requestAnimationFrame(() => { checkPosition(imageCompareContainers) });
                 }
             }, 
             { passive: true }
@@ -202,12 +202,8 @@ document.addEventListener("DOMContentLoaded", function () {
             function () {
                 if (!isResizing) {
                     isResizing = true;
-    
-                    if (!window.requestAnimationFrame) {
-                        setTimeout(() => { checkLabel(imageCompareContainers) }, 100);
-                    } else {
-                        requestAnimationFrame(() => { checkLabel(imageCompareContainers) });
-                    }
+
+                    requestAnimationFrame(() => { checkLabel(imageCompareContainers) });
                 }
             },
             { passive: true }
@@ -279,48 +275,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
             handle.addEventListener('mouseup', handleMouseUp);
             handle.addEventListener('touchend', handleMouseUp);
-    
+
             function handleMouseMove (event) {
                 if (isDragging) {
-                    if (!window.requestAnimationFrame) {
-                        setTimeout(function () {
-                            animateDraggedHandle(
-                                event,
-                                handle,
-                                handlePosition, 
-                                handleWidth, 
-                                minLeft, 
-                                maxLeft, 
-                                containerPosition, 
-                                containerWidth, 
-                                resizeImage, 
-                                labelOriginal, 
-                                labelModified
-                            );
-                        }, 100)
-                    } else {
-                        requestAnimationFrame(function () {
-                            animateDraggedHandle(
-                                event, 
-                                handle, 
-                                handlePosition, 
-                                handleWidth, 
-                                minLeft, 
-                                maxLeft, 
-                                containerPosition, 
-                                containerWidth, 
-                                resizeImage, 
-                                labelOriginal, 
-                                labelModified
-                            );
-                        });
-                    }
+                    requestAnimationFrame(() => {
+                        animateDraggedHandle(event, handle, handlePosition, handleWidth, minLeft, maxLeft,containerPosition, containerWidth, resizeImage, labelOriginal, labelModified)
+                    })
                 }
             }
 
             handle.parentNode.addEventListener('mousemove', handleMouseMove, { passive: true })
             handle.parentNode.addEventListener('touchmove', handleMouseMove, { passive: true })
-            
+
             function documentMouseUp () {
                 handle.classList.remove('draggable');
                 resizeImage.classList.remove('resizable');
@@ -347,6 +313,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
+
+        function lerp(start, end, amt) {
+            return (1 - amt) * start + amt * end
+        };
     
         function animateDraggedHandle (event, handle, handlePosition, handleWidth, minLeft, maxLeft, containerPosition, containerWidth, resizeImage, labelOriginal, labelModified) {
             let left = event.pageX + handlePosition - handleWidth;
@@ -356,9 +326,9 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if ( left > maxLeft) {
                 left = maxLeft;
             }
-    
+
             let width = (left + handleWidth / 2 - containerPosition) * 100 / containerWidth + '%';
-    
+
             handle.style.left = width;
             resizeImage.style.width = width;
     
