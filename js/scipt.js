@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (isMobile.any()) document.body.style.overflowY = 'hidden';
 
                 handleWidth = handle.offsetWidth;
-                handlePosition = offset(handle).left + handleWidth - event.pageX;
+                handlePosition = offset(handle).left + handleWidth - ((event.type === "touchstart") ? event.changedTouches[0].pageX : event.pageX);
                 containerPosition = offset(container).left;
                 containerWidth = container.offsetWidth;
                 minLeft = containerPosition + 10;
@@ -279,7 +279,7 @@ document.addEventListener("DOMContentLoaded", function () {
             function handleMouseMove (event) {
                 if (isDragging) {
                     requestAnimationFrame(() => {
-                        animateDraggedHandle(event, handle, handlePosition, handleWidth, minLeft, maxLeft,containerPosition, containerWidth, resizeImage, labelOriginal, labelModified)
+                        animateDraggedHandle((event.type === "touchmove") ? event.changedTouches[0] : event, handle, handlePosition, handleWidth, minLeft, maxLeft,containerPosition, containerWidth, resizeImage, labelOriginal, labelModified)
                     })
                 }
             }
@@ -313,10 +313,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
-
-        function lerp(start, end, amt) {
-            return (1 - amt) * start + amt * end
-        };
     
         function animateDraggedHandle (event, handle, handlePosition, handleWidth, minLeft, maxLeft, containerPosition, containerWidth, resizeImage, labelOriginal, labelModified) {
             let left = event.pageX + handlePosition - handleWidth;
