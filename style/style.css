@@ -974,6 +974,8 @@ body.privacy {
     margin-bottom: clamp(3.25rem, 1.5rem + 8.75vw, 8.5rem);
 }
 .videos .title {
+    font-size: clamp(1.75rem, 1.3799rem + 1.5584vw, 3.25rem);
+    line-height: clamp(2rem, 1.4549rem + 2.2951vw, 3.75rem);
     margin-bottom: 72px;
 }
 .videos .title span {
@@ -2041,6 +2043,76 @@ body.privacy {
     }
 }
 
+@media screen and (min-width: 769px) and (max-width: 1600px) {
+    .hello .title {
+        font-size: 58px;
+    }
+    .hello .text {
+        font-size: 22px;
+    }
+
+    .film__text {
+        font-size: 18px;
+    }
+    
+    .overview .title {
+        font-size: 42px;
+    }
+    .overview__block__title {
+        font-size: 17px;
+        line-height: 19px;
+
+        margin-bottom: 6px;
+    }
+    .overview__block__text {
+        font-size: 15px;
+        line-height: 23px;
+    }
+    .overview .text {
+        font-size: 23px;
+    }
+    .overview__text {
+        font-size: 18px;
+    }
+
+    .use__type,
+    .google__title,
+    .ignore__title,
+    .preview__type,
+    .interface__title,
+    .view__title,
+    .devolopers__type,
+    .wallpapers__type {
+        font-size: 22px;
+        line-height: 40px;
+    }
+    .use .title,
+    .google .title,
+    .ignore .title,
+    .preview .title,
+    .interface .title,
+    .view .title,
+    .videos .title,
+    .reviews .title,
+    .devolopers .title,
+    .wallpapers .title {
+        font-size: 42px;
+        line-height: 46px;
+    }
+    .use__text,
+    .google .text,
+    .ignore .text,
+    .preview__text,
+    .interface .text,
+    .view .text,
+    .devolopers .text,
+    .wallpapers .text {
+        font-size: 23px;
+        line-height: 27px;
+    }
+    
+}
+
 @media screen and (max-width: 1440px) {
     .header.sticky {
         padding: 12px 0;
@@ -2077,16 +2149,6 @@ body.privacy {
         padding-bottom: 75px;
 
         margin-bottom: 60px;
-    }
-    .overview__block__title {
-        font-size: 17px;
-        line-height: 19px;
-
-        margin-bottom: 6px;
-    }
-    .overview__block__text {
-        font-size: 15px;
-        line-height: 23px;
     }
     .overview__block {
         padding-left: 16px;
